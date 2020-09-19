@@ -1,0 +1,53 @@
+.sidebar {
+    height: 100%;
+    width: 230px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: black;
+    overflow-x: hidden;
+    padding-top: 16px;
+}
+
+.sidebar a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 22px;
+    color: white;
+    display: block;
+}
+
+.sidebar ul a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    color: white;
+    display: block;
+}
+
+.sidebar a:hover {
+    color: #f1f1f1;
+}
+
+.contents {
+    margin-left: 230px;
+    padding: 0px 10px;
+}
+
+.main {
+    margin-left: 230px;
+    padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidebar {
+        padding-top: 15px;
+    }
+
+        .sidebar a {
+            font-size: 18px;
+        }
+}
