@@ -1,0 +1,111 @@
+.sidebar {
+    height: 100%;
+    width: 450px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 16px;
+}
+
+.sidebar a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    display: block;
+}
+
+.sidebar ul div div{
+    display: block;
+}
+
+.sidebar ul a {
+    padding: 0px 8px 0px 15px;
+    text-decoration: none;
+    font-size: 12px;
+    display: block;
+}
+
+.sidebar ul #header-link:hover {
+    color: grey;
+	font-weight: bold;  
+}
+
+.sidebar input:checked + div {
+    display: none;
+}
+
+.sidebar ul a:hover {
+	font-weight: bold;  
+    color: grey;
+}
+
+.sidebar label {
+    color: white;
+    font-weight: bold;
+}
+
+#input-search{
+    padding: 6px 8px 6px 16px;
+    margin-left: 15px;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    color: black;
+    display: block;
+}
+
+html {
+	background-color: 	#262626;
+	font-family:'Times New Roman', Times, serif;
+}
+
+body {
+	width: 1500px;
+	height: 100%;
+}
+
+.kwd{
+	color: rgb(122, 171, 255);
+}
+
+.pln {
+    color: rgb(232, 230, 227);
+}
+
+.clo, .opn, .pun {
+    color: rgb(255, 255, 133);
+}
+
+.main li {
+	color: white;
+}
+
+.main .fileHeader {
+	font-size: 30px;
+	font-weight: bold;
+	color: white;
+	text-decoration: none;
+
+}
+
+.main .declaration {
+	font-size: 18px;
+	font-weight: bold;
+	color: lightslategrey;
+}
+
+.main p {
+	color: white;
+	font-size: 18px;
+}
+
+.main {
+	margin-left: 450px;
+    padding: 0px 10px;
+}

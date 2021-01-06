@@ -1,24 +1,21 @@
 import os
 import sys
-import json
 
-class HTMLWriter:
+class ReferenceWriter:
     def __init__(self, files, dictionary):
         self.htmlData = [
             "<!DOCTYPE html>\n",
             "<html lang='en'>\n"
             "<head>\n",
             "<meta charset='utf-8'/>\n",
-            "<script src='javascript/search.js'></script>\n",
+            "<script src='javascript/utility.js'></script>\n",
             "<script src='https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js'></script>\n",
-            "<link rel='stylesheet' type='text/css' href='sheets/sidebar.css'>\n",
-            "<link rel='stylesheet' type='text/css' href='sheets/style.css'>\n",
+            "<link rel='stylesheet' href='sheets/dark.css' id='theme'>\n",
             "</head>\n",
             "<body>\n",
-            "<div class='sidebar'>\n",
+            "<div class='sidebar' id='sidebar-id'>\n",
             "<a>Reference</a>\n",
-            "<input id='input-search' type='text' placeholder='search...'>\n",
-            "<button type='button' onclick='search()'>Submit</button>\n",
+            "<input onkeypress='search()' id='input-search' type='text' placeholder='search...'>\n",
             "<ul>\n"
         ]
         self.files = files
@@ -32,7 +29,7 @@ class HTMLWriter:
         for fileName, data in  self.dictionary.items():
             if len(data) > 0:
                 file.write("<div id='sidebar-entry'>\n")
-                file.write("    <label style='color: white'>" + fileName + "</label><input type='checkbox'/>\n")
+                file.write("    <label>" + fileName + "</label>\n")
                 file.write("    <div>\n")
                 for key in data:
                     file.write("        <code class='prettyprint'> <a class='header-link' href='#" + str(fileName) + str(data[key]) + "'>" + str(data[key]) + "</a> </li> </code>\n")
@@ -43,7 +40,9 @@ class HTMLWriter:
         file.write("</div>\n")
 
     def writeReferences(self,file):
-        file.write("<div class='main'>\n")
+        file.write("<div class='main' id='main-id'>\n")
+        file.write("<button onclick='changeTheme();' id='switch'>Switch Theme</button>\n")
+        file.write("<button onclick='toggle_sidebar();'>toggle</button>\n")
         for fileName, data in self.dictionary.items():
             if len(data) > 0:
                 file.write("    <h2 class='fileHeader'>" + str(fileName) + "</h2>\n")
@@ -56,28 +55,33 @@ class HTMLWriter:
         file.write("</body>\n")
         file.write("</html>\n")
 
-    def createDocumentation(self):
+    def createReference(self):
         print("Creating index.html file....")
         with open("index.html",'w') as file:
             self.writeHTMLData(file)
             self.writeSideBar(file)
             self.writeReferences(file)
 
-def getFilesFromDirectory(dirName):
+def getFilesFromDirectory(dirName, filterList=[]):
     files = []
     with os.scandir(dirName) as dirs:
         for entry in dirs:
             if(entry.is_dir()):
-                files += (getFilesFromDirectory(entry.path))
+                files += (getFilesFromDirectory(entry.path, filterList))
             else:
-                files.append(entry)   
+                if len(filterList) >= 1:
+                    for f in filterList:
+                        if f in str(entry):
+                            files.append(entry)   
+                else:
+                    files.append(entry)   
     return files
 
 def addFilesToDictionary(files,dictionary):
     for f in files:
         dictionary[f.name] = {}
 
-def formatLine(line):
+def formatLine(line, commentDenotion):
     line = line.replace(commentDenotion,"")
     line = line.replace("<","&lt")
     line = line.replace("<","&gt")
@@ -89,30 +93,32 @@ def processFile(file,f, commentDenotion,dictionary):
     for line in f:
         line = line.strip()
         if addDictEntry == True:
-            line = formatLine(line)
+            line = formatLine(line, commentDenotion)
             dictionary[file.name][comment] = line
             addDictEntry = False
         if line.startswith(commentDenotion):
-            line = formatLine(line)
+            line = formatLine(line, commentDenotion)
             addDictEntry = True
             comment=line
-
-def readFileToDictionary(file, commentDenotion, dictionary):
-    with open(file.path, 'r') as f:
-        processFile(file,f,commentDenotion,dictionary)
 
 def readFiles(files, commentDenotion, dictionary):
     for f in files:
         print("Reading file:", f.name, "....")
-        readFileToDictionary(f, commentDenotion, dictionary)
+        with open(f.path, 'r') as file:
+            processFile(f,file,commentDenotion,dictionary)
 
-
-if __name__ == "__main__":
+def main():
+    print("Generating documentation.....")
     dictionary={}
     directory=str(sys.argv[1])
     commentDenotion=str(sys.argv[2])
+    filterList=str(sys.argv[3]).split(",")
 
-    files = getFilesFromDirectory(directory)
+    files = getFilesFromDirectory(directory, filterList)
     addFilesToDictionary(files,dictionary)
     readFiles(files, commentDenotion, dictionary)
-    HTMLWriter(files,dictionary).createDocumentation()
+    ReferenceWriter(files,dictionary).createReference()
+    print("Documentation generated.")
+
+if __name__ == "__main__":
+    main()
