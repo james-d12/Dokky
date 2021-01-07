@@ -1,19 +1,20 @@
-const data = document.getElementsByClassName("header-link");
+const links = document.getElementsByClassName("header-link");
+const checkboxes = document.getElementsByClassName("toggle-checkbox");
 
 function search(){
+    const length = links.length;
     const searchText = document.getElementById("input-search").value.toString();
-
-    for (let index = 0; index < data.length; ++index) {
-        if(data[index].innerText.includes(searchText)){
-            data[index].style.display = "block";
+    for (let index = 0; index < length; ++index) {
+        if(links[index].innerText.includes(searchText)){
+            links[index].style.display = "block";
         }
         else{
-            data[index].style.display = "none";
+            links[index].style.display = "none";
         }   
     }
 }
 
-function toggle_sidebar(){
+function toggleSidebar(){
     let visibility = document.getElementById("sidebar-id").style.display;
     
     if(visibility == "none"){
@@ -23,6 +24,14 @@ function toggle_sidebar(){
     else{
         document.getElementById("sidebar-id").style.display = "none"
         document.getElementById("main-id").style.marginLeft = "0px"
+    }
+}
+
+function toggleCheckboxes(){
+    const length = checkboxes.length;
+    for(let index = 0; index < length; ++index){
+        const item = checkboxes[index];
+        item.checked = !item.checked;
     }
 }
 

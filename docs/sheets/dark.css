@@ -1,3 +1,13 @@
+html {
+	background-color: 	#262626;
+	font-family:'Times New Roman', Times, serif;
+}
+
+body {
+	width: 1500px;
+	height: 100%;
+}
+
 .sidebar {
     height: 100%;
     width: 450px;
@@ -48,6 +58,7 @@
 .sidebar label {
     color: white;
     font-weight: bold;
+    font-size: 20px;
 }
 
 #input-search{
@@ -58,16 +69,6 @@
     font-size: 16px;
     color: black;
     display: block;
-}
-
-html {
-	background-color: 	#262626;
-	font-family:'Times New Roman', Times, serif;
-}
-
-body {
-	width: 1500px;
-	height: 100%;
 }
 
 .kwd{
@@ -82,8 +83,13 @@ body {
     color: rgb(255, 255, 133);
 }
 
+.main {
+    margin-left: 450px;
+    padding: 0px 10px;
+}
+
 .main li {
-	color: white;
+    color: white;
 }
 
 .main .fileHeader {
@@ -103,9 +109,4 @@ body {
 .main p {
 	color: white;
 	font-size: 18px;
-}
-
-.main {
-	margin-left: 450px;
-    padding: 0px 10px;
 }
