@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8'/>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<script src='javascript/utility.js'></script>
+<script src='https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js'></script>
+<link rel='stylesheet' href='sheets/dark.css' id='theme'>
+</head>
+<body>
+<div class='sidebar' id='sidebar-id'>
+<a>Reference</a>
+<input onkeypress='search()' id='input-search' type='text' placeholder='search...'>
+<ul>
+<div id='sidebar-entry'>
+    <label>utils.hpp</label><input class='toggle-checkbox' type='checkbox'/>
+    <div>
+        <code class='prettyprint'> <a class='header-link' href='#utils.hppstatic inline void assertion(bool expr, const char* msg)'>static inline void assertion(bool expr, const char* msg)</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#utils.hppstatic inline auto out_of_bounds(const T index, const size_t upper_bound)'>static inline auto out_of_bounds(const T index, const size_t upper_bound)</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#utils.hppstatic inline auto are_same(T1 num1, T2 num2)'>static inline auto are_same(T1 num1, T2 num2)</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#utils.hppinline auto are_same&ltfloat, float&gt(float num1, float num2)'>inline auto are_same&ltfloat, float&gt(float num1, float num2)</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#utils.hppinline auto are_same&ltdouble, double&gt(double num1, double num2)'>inline auto are_same&ltdouble, double&gt(double num1, double num2)</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#utils.hppinline auto are_same&ltlong double, long double&gt(long double num1, long double num2)'>inline auto are_same&ltlong double, long double&gt(long double num1, long double num2)</a> </li> </code>
+    </div>
+</div>
+<div id='sidebar-entry'>
+    <label>triangle.hpp</label><input class='toggle-checkbox' type='checkbox'/>
+    <div>
+        <code class='prettyprint'> <a class='header-link' href='#triangle.hppconstexpr explicit triangle(T a1, T a2, T b1, T b2, T c1, T c2);'>constexpr explicit triangle(T a1, T a2, T b1, T b2, T c1, T c2);</a> </li> </code>
+    </div>
+</div>
+<div id='sidebar-entry'>
+    <label>dynamic_matrix_engine.hpp</label><input class='toggle-checkbox' type='checkbox'/>
+    <div>
+        <code class='prettyprint'> <a class='header-link' href='#dynamic_matrix_engine.hppexplicit dynamic_matrix_engine(size_type num, const_reference val);'>explicit dynamic_matrix_engine(size_type num, const_reference val);</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#dynamic_matrix_engine.hppexplicit dynamic_matrix_engine(const storage_type data);'>explicit dynamic_matrix_engine(const storage_type data);</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#dynamic_matrix_engine.hppdynamic_matrix_engine(const std::initializer_list&lttype&gt data);'>dynamic_matrix_engine(const std::initializer_list&lttype&gt data);</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#dynamic_matrix_engine.hppdynamic_matrix_engine& operator=(const storage_type data);'>dynamic_matrix_engine& operator=(const storage_type data);</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#dynamic_matrix_engine.hppdynamic_matrix_engine& operator=(const std::initializer_list&lttype&gt data);'>dynamic_matrix_engine& operator=(const std::initializer_list&lttype&gt data);</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#dynamic_matrix_engine.hppreference operator[](const size_type index);'>reference operator[](const size_type index);</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#dynamic_matrix_engine.hppconst_reference operator[](const size_type index) const;'>const_reference operator[](const size_type index) const;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#dynamic_matrix_engine.hppreference operator()(const size_type i, const size_type j);'>reference operator()(const size_type i, const size_type j);</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#dynamic_matrix_engine.hppconst_reference operator()(const size_type i, const size_type j) const;'>const_reference operator()(const size_type i, const size_type j) const;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#dynamic_matrix_engine.hppconstexpr auto order() const noexcept;'>constexpr auto order() const noexcept;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#dynamic_matrix_engine.hppauto data() const noexcept;'>auto data() const noexcept;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#dynamic_matrix_engine.hppauto size() const noexcept;'>auto size() const noexcept;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#dynamic_matrix_engine.hppauto capacity() const noexcept;'>auto capacity() const noexcept;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#dynamic_matrix_engine.hppauto rows() const noexcept;'>auto rows() const noexcept;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#dynamic_matrix_engine.hppauto rows_capacity() const noexcept;'>auto rows_capacity() const noexcept;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#dynamic_matrix_engine.hppauto columns() const noexcept;'>auto columns() const noexcept;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#dynamic_matrix_engine.hppauto columns_capacity() const noexcept;'>auto columns_capacity() const noexcept;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#dynamic_matrix_engine.hppvoid resize(const size_type rows, const size_type cols);'>void resize(const size_type rows, const size_type cols);</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#dynamic_matrix_engine.hppvoid reserve(const size_type rows_capacity, const size_type cols_capacity);'>void reserve(const size_type rows_capacity, const size_type cols_capacity);</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#dynamic_matrix_engine.hppvoid resize_and_reserve(const size_type rows, const size_type rows_capacity, const size_type cols, const size_type cols_capacity);'>void resize_and_reserve(const size_type rows, const size_type rows_capacity, const size_type cols, const size_type cols_capacity);</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#dynamic_matrix_engine.hppvoid fill(const_reference n);'>void fill(const_reference n);</a> </li> </code>
+    </div>
+</div>
+<div id='sidebar-entry'>
+    <label>dynamic_vector_engine.hpp</label><input class='toggle-checkbox' type='checkbox'/>
+    <div>
+        <code class='prettyprint'> <a class='header-link' href='#dynamic_vector_engine.hppexplicit dynamic_vector_engine(size_type num, const_reference val = type());'>explicit dynamic_vector_engine(size_type num, const_reference val = type());</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#dynamic_vector_engine.hppexplicit dynamic_vector_engine(const storage_type data);'>explicit dynamic_vector_engine(const storage_type data);</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#dynamic_vector_engine.hppdynamic_vector_engine(const std::initializer_list&lttype&gt data);'>dynamic_vector_engine(const std::initializer_list&lttype&gt data);</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#dynamic_vector_engine.hppdynamic_vector_engine& operator=(const storage_type data);'>dynamic_vector_engine& operator=(const storage_type data);</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#dynamic_vector_engine.hppdynamic_vector_engine& operator=(const std::initializer_list&lttype&gt data);'>dynamic_vector_engine& operator=(const std::initializer_list&lttype&gt data);</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#dynamic_vector_engine.hppreference operator[](const size_type index) noexcept;'>reference operator[](const size_type index) noexcept;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#dynamic_vector_engine.hppconst_reference operator[](const size_type index) const noexcept;'>const_reference operator[](const size_type index) const noexcept;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#dynamic_vector_engine.hppauto begin() noexcept;'>auto begin() noexcept;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#dynamic_vector_engine.hppauto begin() const noexcept;'>auto begin() const noexcept;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#dynamic_vector_engine.hppauto end() noexcept;'>auto end() noexcept;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#dynamic_vector_engine.hppauto end() const noexcept;'>auto end() const noexcept;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#dynamic_vector_engine.hppauto rbegin() noexcept;'>auto rbegin() noexcept;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#dynamic_vector_engine.hppauto rbegin() const noexcept;'>auto rbegin() const noexcept;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#dynamic_vector_engine.hppauto rend() noexcept;'>auto rend() noexcept;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#dynamic_vector_engine.hppauto rend() const noexcept;'>auto rend() const noexcept;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#dynamic_vector_engine.hppauto cbegin() const noexcept;'>auto cbegin() const noexcept;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#dynamic_vector_engine.hppauto cend() const noexcept;'>auto cend() const noexcept;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#dynamic_vector_engine.hppauto crbegin() const noexcept;'>auto crbegin() const noexcept;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#dynamic_vector_engine.hppauto crend() const noexcept;'>auto crend() const noexcept;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#dynamic_vector_engine.hppauto data() const noexcept;'>auto data() const noexcept;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#dynamic_vector_engine.hppauto size() const noexcept;'>auto size() const noexcept;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#dynamic_vector_engine.hppauto capacity() const noexcept;'>auto capacity() const noexcept;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#dynamic_vector_engine.hppvoid resize(size_type size);'>void resize(size_type size);</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#dynamic_vector_engine.hppvoid reserve(size_type capacity);'>void reserve(size_type capacity);</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#dynamic_vector_engine.hppvoid resize_and_reserve(size_type size, size_type capacity);'>void resize_and_reserve(size_type size, size_type capacity);</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#dynamic_vector_engine.hppvoid fill(const_reference n);'>void fill(const_reference n);</a> </li> </code>
+    </div>
+</div>
+<div id='sidebar-entry'>
+    <label>engine_properties.hpp</label><input class='toggle-checkbox' type='checkbox'/>
+    <div>
+        <code class='prettyprint'> <a class='header-link' href='#engine_properties.hppstruct engine_properties'>struct engine_properties</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#engine_properties.hppstruct engine_properties&ltresizable_vector_engine_type&gt'>struct engine_properties&ltresizable_vector_engine_type&gt</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#engine_properties.hppstruct engine_properties&ltfixed_vector_engine_type&gt'>struct engine_properties&ltfixed_vector_engine_type&gt</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#engine_properties.hppstruct engine_properties&ltresizable_matrix_engine_type&gt'>struct engine_properties&ltresizable_matrix_engine_type&gt</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#engine_properties.hppstruct engine_properties&ltfixed_matrix_engine_type&gt'>struct engine_properties&ltfixed_matrix_engine_type&gt</a> </li> </code>
+    </div>
+</div>
+<div id='sidebar-entry'>
+    <label>fixed_matrix_engine.hpp</label><input class='toggle-checkbox' type='checkbox'/>
+    <div>
+        <code class='prettyprint'> <a class='header-link' href='#fixed_matrix_engine.hppconstexpr fixed_matrix_engine();'>constexpr fixed_matrix_engine();</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#fixed_matrix_engine.hppconstexpr explicit fixed_matrix_engine(const storage_type data);'>constexpr explicit fixed_matrix_engine(const storage_type data);</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#fixed_matrix_engine.hppconstexpr fixed_matrix_engine(const std::initializer_list&lttype&gt data);'>constexpr fixed_matrix_engine(const std::initializer_list&lttype&gt data);</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#fixed_matrix_engine.hppconstexpr fixed_matrix_engine& operator=(const storage_type data);'>constexpr fixed_matrix_engine& operator=(const storage_type data);</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#fixed_matrix_engine.hppconstexpr fixed_matrix_engine& operator=(const std::initializer_list&lttype&gt data);'>constexpr fixed_matrix_engine& operator=(const std::initializer_list&lttype&gt data);</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#fixed_matrix_engine.hppconstexpr reference operator[](const size_type index);'>constexpr reference operator[](const size_type index);</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#fixed_matrix_engine.hppconstexpr const_reference operator[](const size_type index) const;'>constexpr const_reference operator[](const size_type index) const;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#fixed_matrix_engine.hppconstexpr reference operator()(const size_type i, const size_type j);'>constexpr reference operator()(const size_type i, const size_type j);</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#fixed_matrix_engine.hppconstexpr const_reference operator()(const size_type i, const size_type j) const;'>constexpr const_reference operator()(const size_type i, const size_type j) const;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#fixed_matrix_engine.hppconstexpr auto begin() noexcept;'>constexpr auto begin() noexcept;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#fixed_matrix_engine.hppconstexpr auto begin() const noexcept;'>constexpr auto begin() const noexcept;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#fixed_matrix_engine.hppconstexpr auto end() noexcept;'>constexpr auto end() noexcept;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#fixed_matrix_engine.hppconstexpr auto end() const noexcept;'>constexpr auto end() const noexcept;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#fixed_matrix_engine.hppconstexpr auto order() const noexcept;'>constexpr auto order() const noexcept;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#fixed_matrix_engine.hppconstexpr auto data() const noexcept;'>constexpr auto data() const noexcept;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#fixed_matrix_engine.hppconstexpr auto size() const noexcept;'>constexpr auto size() const noexcept;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#fixed_matrix_engine.hppconstexpr auto capacity() const noexcept;'>constexpr auto capacity() const noexcept;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#fixed_matrix_engine.hppconstexpr auto rows() const noexcept;'>constexpr auto rows() const noexcept;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#fixed_matrix_engine.hppconstexpr auto rows_capacity() const noexcept;'>constexpr auto rows_capacity() const noexcept;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#fixed_matrix_engine.hppconstexpr auto columns() const noexcept;'>constexpr auto columns() const noexcept;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#fixed_matrix_engine.hppconstexpr auto columns_capacity() const noexcept;'>constexpr auto columns_capacity() const noexcept;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#fixed_matrix_engine.hppconstexpr void fill(const_reference n);'>constexpr void fill(const_reference n);</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#fixed_matrix_engine.hppstorage_type m_data;'>storage_type m_data;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#fixed_matrix_engine.hppstatic constexpr size_type m_rows = R;'>static constexpr size_type m_rows = R;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#fixed_matrix_engine.hppstatic constexpr size_type m_rows_capacity = R;'>static constexpr size_type m_rows_capacity = R;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#fixed_matrix_engine.hppstatic constexpr size_type m_columns = C;'>static constexpr size_type m_columns = C;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#fixed_matrix_engine.hppstatic constexpr size_type m_columns_capacity = C;'>static constexpr size_type m_columns_capacity = C;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#fixed_matrix_engine.hppstatic constexpr MatrixOrder m_order = O;'>static constexpr MatrixOrder m_order = O;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#fixed_matrix_engine.hppconstexpr auto index(const size_type i, const size_type j) const;'>constexpr auto index(const size_type i, const size_type j) const;</a> </li> </code>
+    </div>
+</div>
+<div id='sidebar-entry'>
+    <label>fixed_vector_engine.hpp</label><input class='toggle-checkbox' type='checkbox'/>
+    <div>
+        <code class='prettyprint'> <a class='header-link' href='#fixed_vector_engine.hppconstexpr fixed_vector_engine();'>constexpr fixed_vector_engine();</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#fixed_vector_engine.hppconstexpr explicit fixed_vector_engine(const storage_type data);'>constexpr explicit fixed_vector_engine(const storage_type data);</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#fixed_vector_engine.hppconstexpr fixed_vector_engine(const std::initializer_list&lttype&gt data);'>constexpr fixed_vector_engine(const std::initializer_list&lttype&gt data);</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#fixed_vector_engine.hppconstexpr fixed_vector_engine& operator=(const storage_type data);'>constexpr fixed_vector_engine& operator=(const storage_type data);</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#fixed_vector_engine.hppconstexpr fixed_vector_engine& operator=(const std::initializer_list&lttype&gt data);'>constexpr fixed_vector_engine& operator=(const std::initializer_list&lttype&gt data);</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#fixed_vector_engine.hppconstexpr reference operator[](const size_type index) noexcept;'>constexpr reference operator[](const size_type index) noexcept;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#fixed_vector_engine.hppconstexpr const_reference operator[](const size_type index) const noexcept;'>constexpr const_reference operator[](const size_type index) const noexcept;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#fixed_vector_engine.hppconstexpr auto begin() noexcept;'>constexpr auto begin() noexcept;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#fixed_vector_engine.hppconstexpr auto begin() const noexcept;'>constexpr auto begin() const noexcept;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#fixed_vector_engine.hppconstexpr auto end() noexcept;'>constexpr auto end() noexcept;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#fixed_vector_engine.hppconstexpr auto end() const noexcept;'>constexpr auto end() const noexcept;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#fixed_vector_engine.hppconstexpr auto rbegin() noexcept;'>constexpr auto rbegin() noexcept;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#fixed_vector_engine.hppconstexpr auto rbegin() const noexcept;'>constexpr auto rbegin() const noexcept;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#fixed_vector_engine.hppconstexpr auto rend() noexcept;'>constexpr auto rend() noexcept;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#fixed_vector_engine.hppconstexpr auto rend() const noexcept;'>constexpr auto rend() const noexcept;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#fixed_vector_engine.hppconstexpr auto cbegin() const noexcept;'>constexpr auto cbegin() const noexcept;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#fixed_vector_engine.hppconstexpr auto cend() const noexcept;'>constexpr auto cend() const noexcept;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#fixed_vector_engine.hppconstexpr auto crbegin() const noexcept;'>constexpr auto crbegin() const noexcept;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#fixed_vector_engine.hppconstexpr auto crend() const noexcept;'>constexpr auto crend() const noexcept;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#fixed_vector_engine.hppconstexpr auto data() const noexcept;'>constexpr auto data() const noexcept;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#fixed_vector_engine.hppconstexpr auto size() const noexcept;'>constexpr auto size() const noexcept;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#fixed_vector_engine.hppconstexpr auto capacity() const noexcept;'>constexpr auto capacity() const noexcept;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#fixed_vector_engine.hppconstexpr void fill(const_reference n);'>constexpr void fill(const_reference n);</a> </li> </code>
+    </div>
+</div>
+<div id='sidebar-entry'>
+    <label>linear_algebra_math.hpp</label><input class='toggle-checkbox' type='checkbox'/>
+    <div>
+        <code class='prettyprint'> <a class='header-link' href='#linear_algebra_math.hppconstexpr auto dot_product(const vector&ltENG1&gt& lhs, const vector&ltENG2&gt& rhs)'>constexpr auto dot_product(const vector&ltENG1&gt& lhs, const vector&ltENG2&gt& rhs)</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#linear_algebra_math.hppconstexpr auto dot_product(const vector&ltENG1&gt& lhs, const vector&ltENG2&gt& rhs, double angle)'>constexpr auto dot_product(const vector&ltENG1&gt& lhs, const vector&ltENG2&gt& rhs, double angle)</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#linear_algebra_math.hppconstexpr auto cross_product(const vector&ltENG1&gt& lhs, const vector&ltENG2&gt& rhs)'>constexpr auto cross_product(const vector&ltENG1&gt& lhs, const vector&ltENG2&gt& rhs)</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#linear_algebra_math.hppconstexpr auto cross_product(const vector&ltENG1&gt& lhs, const vector&ltENG2&gt& rhs, double angle)'>constexpr auto cross_product(const vector&ltENG1&gt& lhs, const vector&ltENG2&gt& rhs, double angle)</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#linear_algebra_math.hppconstexpr auto angle_between(const vector&ltENG1&gt& lhs, const vector&ltENG2&gt& rhs)'>constexpr auto angle_between(const vector&ltENG1&gt& lhs, const vector&ltENG2&gt& rhs)</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#linear_algebra_math.hppconstexpr auto scalar_triplet_product(const vector&ltENG1&gt& v1, const vector&ltENG2&gt& v2, const vector&ltENG3&gt& v3)'>constexpr auto scalar_triplet_product(const vector&ltENG1&gt& v1, const vector&ltENG2&gt& v2, const vector&ltENG3&gt& v3)</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#linear_algebra_math.hppconstexpr auto direction_cosine_alpha(const vector&ltENG&gt& v)'>constexpr auto direction_cosine_alpha(const vector&ltENG&gt& v)</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#linear_algebra_math.hppconstexpr auto direction_cosine_beta(const vector&ltENG&gt& v)'>constexpr auto direction_cosine_beta(const vector&ltENG&gt& v)</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#linear_algebra_math.hppconstexpr auto direction_cosine_gamma(const vector&ltENG&gt& v)'>constexpr auto direction_cosine_gamma(const vector&ltENG&gt& v)</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#linear_algebra_math.hppconstexpr auto vector_projection(const vector&ltENG1&gt& lhs, const vector&ltENG2&gt& rhs)'>constexpr auto vector_projection(const vector&ltENG1&gt& lhs, const vector&ltENG2&gt& rhs)</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#linear_algebra_math.hppconstexpr auto scalar_projection(const vector&ltENG1&gt& lhs, const vector&ltENG2&gt& rhs)'>constexpr auto scalar_projection(const vector&ltENG1&gt& lhs, const vector&ltENG2&gt& rhs)</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#linear_algebra_math.hppconstexpr bool are_orthogonal(const vector&ltENG1&gt& lhs, const vector&ltENG2&gt& rhs)'>constexpr bool are_orthogonal(const vector&ltENG1&gt& lhs, const vector&ltENG2&gt& rhs)</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#linear_algebra_math.hppconstexpr bool are_collinear(const vector&ltENG1&gt& lhs, const vector&ltENG2&gt& rhs)'>constexpr bool are_collinear(const vector&ltENG1&gt& lhs, const vector&ltENG2&gt& rhs)</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#linear_algebra_math.hppconstexpr bool are_coplanar(const vector&ltENG1&gt& v1, const vector&ltENG2&gt& v2, const vector&ltENG3&gt& v3)'>constexpr bool are_coplanar(const vector&ltENG1&gt& v1, const vector&ltENG2&gt& v2, const vector&ltENG3&gt& v3)</a> </li> </code>
+    </div>
+</div>
+<div id='sidebar-entry'>
+    <label>linear_algebra_traits.hpp</label><input class='toggle-checkbox' type='checkbox'/>
+    <div>
+        <code class='prettyprint'> <a class='header-link' href='#linear_algebra_traits.hppstruct is_engine_matrix'>struct is_engine_matrix</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#linear_algebra_traits.hppstruct is_engine_vector'>struct is_engine_vector</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#linear_algebra_traits.hppstruct is_engine_fixed'>struct is_engine_fixed</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#linear_algebra_traits.hppstruct is_engine_resizable'>struct is_engine_resizable</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#linear_algebra_traits.hpp - data type [x]'> - data type [x]</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#linear_algebra_traits.hpp - memory management type'> - memory management type</a> </li> </code>
+    </div>
+</div>
+<div id='sidebar-entry'>
+    <label>matrix.hpp</label><input class='toggle-checkbox' type='checkbox'/>
+    <div>
+        <code class='prettyprint'> <a class='header-link' href='#matrix.hppconstexpr matrix();'>constexpr matrix();</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#matrix.hppconstexpr explicit matrix(const storage_type data);'>constexpr explicit matrix(const storage_type data);</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#matrix.hppconstexpr matrix(const std::initializer_list&lttype&gt data);'>constexpr matrix(const std::initializer_list&lttype&gt data);</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#matrix.hppconstexpr explicit matrix(const ENG& engine);'>constexpr explicit matrix(const ENG& engine);</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#matrix.hppconstexpr matrix& operator=(const storage_type data);'>constexpr matrix& operator=(const storage_type data);</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#matrix.hppconstexpr matrix& operator=(const std::initializer_list&lttype&gt data);'>constexpr matrix& operator=(const std::initializer_list&lttype&gt data);</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#matrix.hppconstexpr matrix& operator=(const ENG& engine);'>constexpr matrix& operator=(const ENG& engine);</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#matrix.hppconstexpr reference operator[](const size_type index);'>constexpr reference operator[](const size_type index);</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#matrix.hppconstexpr const_reference operator[](const size_type index) const;'>constexpr const_reference operator[](const size_type index) const;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#matrix.hppconstexpr reference operator()(const size_type i, const size_type j);'>constexpr reference operator()(const size_type i, const size_type j);</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#matrix.hppconstexpr const_reference operator()(const size_type i, const size_type j) const;'>constexpr const_reference operator()(const size_type i, const size_type j) const;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#matrix.hppconstexpr auto order() const noexcept;'>constexpr auto order() const noexcept;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#matrix.hppconstexpr auto engine() const noexcept;'>constexpr auto engine() const noexcept;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#matrix.hppconstexpr auto data() const noexcept;'>constexpr auto data() const noexcept;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#matrix.hppconstexpr auto dimensions() const noexcept;'>constexpr auto dimensions() const noexcept;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#matrix.hppconstexpr auto capacity() const noexcept;'>constexpr auto capacity() const noexcept;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#matrix.hppconstexpr auto rows() const noexcept;'>constexpr auto rows() const noexcept;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#matrix.hppconstexpr auto rows_capacity() const noexcept;'>constexpr auto rows_capacity() const noexcept;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#matrix.hppconstexpr auto columns() const noexcept;'>constexpr auto columns() const noexcept;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#matrix.hppconstexpr auto columns_capacity() const noexcept;'>constexpr auto columns_capacity() const noexcept;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#matrix.hppconstexpr auto get_row(size_type index) const;'>constexpr auto get_row(size_type index) const;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#matrix.hppconstexpr auto get_column(size_type index) const;'>constexpr auto get_column(size_type index) const;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#matrix.hppconstexpr void fill(const_reference n);'>constexpr void fill(const_reference n);</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#matrix.hppvoid print() const noexcept;'>void print() const noexcept;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#matrix.hppvoid tranpose();'>void tranpose();</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#matrix.hppconstexpr auto transposed() const;'>constexpr auto transposed() const;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#matrix.hppinline auto operator+(const matrix&ltENG1&gt& lhs, const matrix&ltENG2&gt& rhs)'>inline auto operator+(const matrix&ltENG1&gt& lhs, const matrix&ltENG2&gt& rhs)</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#matrix.hppinline auto operator-(const matrix&ltENG1&gt& lhs, const matrix&ltENG2&gt& rhs)'>inline auto operator-(const matrix&ltENG1&gt& lhs, const matrix&ltENG2&gt& rhs)</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#matrix.hppinline auto operator*(const matrix&ltENG1&gt& lhs, const matrix&ltENG2&gt& rhs)'>inline auto operator*(const matrix&ltENG1&gt& lhs, const matrix&ltENG2&gt& rhs)</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#matrix.hppinline auto operator==(const matrix&ltENG1&gt& lhs, const matrix&ltENG2&gt& rhs)'>inline auto operator==(const matrix&ltENG1&gt& lhs, const matrix&ltENG2&gt& rhs)</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#matrix.hppinline auto operator!=(const matrix&ltENG1&gt& lhs, const matrix&ltENG2&gt& rhs)'>inline auto operator!=(const matrix&ltENG1&gt& lhs, const matrix&ltENG2&gt& rhs)</a> </li> </code>
+    </div>
+</div>
+<div id='sidebar-entry'>
+    <label>matrix_engine_operator.hpp</label><input class='toggle-checkbox' type='checkbox'/>
+    <div>
+        <code class='prettyprint'> <a class='header-link' href='#matrix_engine_operator.hppauto matrix_engine_equal(FwdIt1 first1, FwdIt1 last1, FwdIt2 first2, FwdIt2 last2) noexcept'>auto matrix_engine_equal(FwdIt1 first1, FwdIt1 last1, FwdIt2 first2, FwdIt2 last2) noexcept</a> </li> </code>
+    </div>
+</div>
+<div id='sidebar-entry'>
+    <label>quarternion.hpp</label><input class='toggle-checkbox' type='checkbox'/>
+    <div>
+        <code class='prettyprint'> <a class='header-link' href='#quarternion.hppconstexpr quarternion(const T x, const T y, const T z, const T w);'>constexpr quarternion(const T x, const T y, const T z, const T w);</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#quarternion.hppconstexpr explicit quarternion(const fvector4&ltT&gt& vec4);'>constexpr explicit quarternion(const fvector4&ltT&gt& vec4);</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#quarternion.hppconstexpr quarternion(const std::initializer_list&lttype&gt data);'>constexpr quarternion(const std::initializer_list&lttype&gt data);</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#quarternion.hppconstexpr quarternion& operator=(const fvector4&ltT&gt& vec4);'>constexpr quarternion& operator=(const fvector4&ltT&gt& vec4);</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#quarternion.hppconstexpr quarternion& operator=(const std::initializer_list&lttype&gt data);'>constexpr quarternion& operator=(const std::initializer_list&lttype&gt data);</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#quarternion.hppconstexpr reference operator[](const size_type index);'>constexpr reference operator[](const size_type index);</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#quarternion.hppconstexpr const_reference operator[](const size_type index) const;'>constexpr const_reference operator[](const size_type index) const;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#quarternion.hppconstexpr void set(const T rotation);'>constexpr void set(const T rotation);</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#quarternion.hppconstexpr void set(const fvector4&ltT&gt& vec4);'>constexpr void set(const fvector4&ltT&gt& vec4);</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#quarternion.hppconstexpr auto x() const;'>constexpr auto x() const;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#quarternion.hppconstexpr auto y() const;'>constexpr auto y() const;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#quarternion.hppconstexpr auto z() const;'>constexpr auto z() const;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#quarternion.hppconstexpr auto w() const;'>constexpr auto w() const;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#quarternion.hppconstexpr auto length() const;'>constexpr auto length() const;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#quarternion.hppconstexpr auto length_squared() const;'>constexpr auto length_squared() const;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#quarternion.hppconstexpr auto vector4() const;'>constexpr auto vector4() const;</a> </li> </code>
+    </div>
+</div>
+<div id='sidebar-entry'>
+    <label>vector.hpp</label><input class='toggle-checkbox' type='checkbox'/>
+    <div>
+        <code class='prettyprint'> <a class='header-link' href='#vector.hppconstexpr explicit vector(const storage_type data);'>constexpr explicit vector(const storage_type data);</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#vector.hppconstexpr vector(const std::initializer_list&lttype&gt data);'>constexpr vector(const std::initializer_list&lttype&gt data);</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#vector.hppconstexpr explicit vector(const ENG& engine);'>constexpr explicit vector(const ENG& engine);</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#vector.hppconstexpr vector& operator=(const storage_type data);'>constexpr vector& operator=(const storage_type data);</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#vector.hppconstexpr vector& operator=(const std::initializer_list&lttype&gt data);'>constexpr vector& operator=(const std::initializer_list&lttype&gt data);</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#vector.hppconstexpr vector& operator=(const ENG& engine);'>constexpr vector& operator=(const ENG& engine);</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#vector.hppconstexpr reference operator[](const size_type index) noexcept;'>constexpr reference operator[](const size_type index) noexcept;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#vector.hppconstexpr const_reference operator[](const size_type index) const noexcept;'>constexpr const_reference operator[](const size_type index) const noexcept;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#vector.hppconstexpr auto operator+=(const vector&ltENG&gt& rhs);'>constexpr auto operator+=(const vector&ltENG&gt& rhs);</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#vector.hppconstexpr auto operator+=(const type scalar);'>constexpr auto operator+=(const type scalar);</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#vector.hppconstexpr auto operator-=(const vector&ltENG&gt& rhs);'>constexpr auto operator-=(const vector&ltENG&gt& rhs);</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#vector.hppconstexpr auto operator-=(const type scalar);'>constexpr auto operator-=(const type scalar);</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#vector.hppconstexpr auto operator*=(const vector&ltENG&gt& rhs);'>constexpr auto operator*=(const vector&ltENG&gt& rhs);</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#vector.hppconstexpr auto operator*=(const type scalar);'>constexpr auto operator*=(const type scalar);</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#vector.hppconstexpr auto begin() noexcept;'>constexpr auto begin() noexcept;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#vector.hppconstexpr auto begin() const noexcept;'>constexpr auto begin() const noexcept;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#vector.hppconstexpr auto end() noexcept;'>constexpr auto end() noexcept;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#vector.hppconstexpr auto end() const noexcept;'>constexpr auto end() const noexcept;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#vector.hppconstexpr auto rbegin() noexcept;'>constexpr auto rbegin() noexcept;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#vector.hppconstexpr auto rbegin() const noexcept;'>constexpr auto rbegin() const noexcept;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#vector.hppconstexpr auto rend() noexcept;'>constexpr auto rend() noexcept;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#vector.hppconstexpr auto rend() const noexcept;'>constexpr auto rend() const noexcept;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#vector.hppconstexpr auto cbegin() const noexcept;'>constexpr auto cbegin() const noexcept;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#vector.hppconstexpr auto cend() const noexcept;'>constexpr auto cend() const noexcept;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#vector.hppconstexpr auto crbegin() const noexcept;'>constexpr auto crbegin() const noexcept;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#vector.hppconstexpr auto crend() const noexcept;'>constexpr auto crend() const noexcept;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#vector.hppconstexpr auto engine() const noexcept;'>constexpr auto engine() const noexcept;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#vector.hppconstexpr auto data() const noexcept;'>constexpr auto data() const noexcept;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#vector.hppconstexpr auto is_normalised() const noexcept;'>constexpr auto is_normalised() const noexcept;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#vector.hppconstexpr auto dimensions() const noexcept;'>constexpr auto dimensions() const noexcept;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#vector.hppconstexpr auto dimensions_capacity() const noexcept;'>constexpr auto dimensions_capacity() const noexcept;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#vector.hppconstexpr void normalise() noexcept;'>constexpr void normalise() noexcept;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#vector.hppconstexpr auto length() const noexcept;'>constexpr auto length() const noexcept;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#vector.hppconstexpr auto length_squared() const noexcept;'>constexpr auto length_squared() const noexcept;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#vector.hppconstexpr auto normalised() const noexcept;'>constexpr auto normalised() const noexcept;</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#vector.hppvoid resize(const size_type size);'>void resize(const size_type size);</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#vector.hppvoid reserve(const size_type capacity);'>void reserve(const size_type capacity);</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#vector.hppvoid resize_and_reserve(const size_type size, const size_type capacity);'>void resize_and_reserve(const size_type size, const size_type capacity);</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#vector.hppinline auto operator+(const vector&ltENG1&gt& lhs, const vector&ltENG2&gt& rhs)'>inline auto operator+(const vector&ltENG1&gt& lhs, const vector&ltENG2&gt& rhs)</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#vector.hppinline auto operator-(const vector&ltENG1&gt& lhs, const vector&ltENG2&gt& rhs)'>inline auto operator-(const vector&ltENG1&gt& lhs, const vector&ltENG2&gt& rhs)</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#vector.hppinline auto operator*(const vector&ltENG1&gt& lhs, const vector&ltENG2&gt& rhs)'>inline auto operator*(const vector&ltENG1&gt& lhs, const vector&ltENG2&gt& rhs)</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#vector.hppinline auto operator+(const vector&ltENG&gt& vec, S scalar)'>inline auto operator+(const vector&ltENG&gt& vec, S scalar)</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#vector.hppinline auto operator-(const vector&ltENG&gt& vec, S scalar)'>inline auto operator-(const vector&ltENG&gt& vec, S scalar)</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#vector.hppinline auto operator*(const vector&ltENG&gt& vec, S scalar)'>inline auto operator*(const vector&ltENG&gt& vec, S scalar)</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#vector.hppinline auto operator==(const vector&ltENG1&gt& lhs, const vector&ltENG2&gt& rhs)'>inline auto operator==(const vector&ltENG1&gt& lhs, const vector&ltENG2&gt& rhs)</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#vector.hppinline auto operator!=(const vector&ltENG1&gt& lhs, const vector&ltENG2&gt& rhs)'>inline auto operator!=(const vector&ltENG1&gt& lhs, const vector&ltENG2&gt& rhs)</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#vector.hppinline auto operator&gt(const vector&ltENG1&gt& lhs, const vector&ltENG2&gt& rhs)'>inline auto operator&gt(const vector&ltENG1&gt& lhs, const vector&ltENG2&gt& rhs)</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#vector.hppinline auto operator&lt(const vector&ltENG1&gt& lhs, const vector&ltENG2&gt& rhs)'>inline auto operator&lt(const vector&ltENG1&gt& lhs, const vector&ltENG2&gt& rhs)</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#vector.hppinline auto operator&gt=(const vector&ltENG1&gt& lhs, const vector&ltENG2&gt& rhs)'>inline auto operator&gt=(const vector&ltENG1&gt& lhs, const vector&ltENG2&gt& rhs)</a> </li> </code>
+        <code class='prettyprint'> <a class='header-link' href='#vector.hppinline auto operator&lt=(const vector&ltENG1&gt& lhs, const vector&ltENG2&gt& rhs)'>inline auto operator&lt=(const vector&ltENG1&gt& lhs, const vector&ltENG2&gt& rhs)</a> </li> </code>
+    </div>
+</div>
+<div id='sidebar-entry'>
+    <label>vector_engine_operator.hpp</label><input class='toggle-checkbox' type='checkbox'/>
+    <div>
+        <code class='prettyprint'> <a class='header-link' href='#vector_engine_operator.hppauto vector_engine_less_than(FwdIt1 first1, FwdIt1 last1, FwdIt2 first2, FwdIt2 last2) noexcept'>auto vector_engine_less_than(FwdIt1 first1, FwdIt1 last1, FwdIt2 first2, FwdIt2 last2) noexcept</a> </li> </code>
+    </div>
+</div>
+</ul>
+</div>
+<div class='main' id='main-id'>
+<button onclick='toggleCheckboxes();'>Toggle Checkboxes</button>
+<button onclick='changeTheme();' id='switch'>Switch Theme</button>
+<button onclick='toggleSidebar();'>Toggle Sidebar</button>
+    <h2 class='fileHeader'>utils.hpp</h2>
+    <ul>
+        <code class='prettyprint'> <h3 id='utils.hppstatic inline void assertion(bool expr, const char* msg)' class='declaration'>static inline void assertion(bool expr, const char* msg)</h3> </code>
+        <li><p>if assertion is true exists with error message.</p></li>
+        <code class='prettyprint'> <h3 id='utils.hppstatic inline auto out_of_bounds(const T index, const size_t upper_bound)' class='declaration'>static inline auto out_of_bounds(const T index, const size_t upper_bound)</h3> </code>
+        <li><p>checks if an index is out of the boundaries.</p></li>
+        <code class='prettyprint'> <h3 id='utils.hppstatic inline auto are_same(T1 num1, T2 num2)' class='declaration'>static inline auto are_same(T1 num1, T2 num2)</h3> </code>
+        <li><p>checks if 2 values are equal.</p></li>
+        <code class='prettyprint'> <h3 id='utils.hppinline auto are_same&ltfloat, float&gt(float num1, float num2)' class='declaration'>inline auto are_same&ltfloat, float&gt(float num1, float num2)</h3> </code>
+        <li><p>checks if 2 values are equal for floating point - uses epsilon differences.</p></li>
+        <code class='prettyprint'> <h3 id='utils.hppinline auto are_same&ltdouble, double&gt(double num1, double num2)' class='declaration'>inline auto are_same&ltdouble, double&gt(double num1, double num2)</h3> </code>
+        <li><p>checks if 2 values are equal for double - uses epsilon differences.</p></li>
+        <code class='prettyprint'> <h3 id='utils.hppinline auto are_same&ltlong double, long double&gt(long double num1, long double num2)' class='declaration'>inline auto are_same&ltlong double, long double&gt(long double num1, long double num2)</h3> </code>
+        <li><p>checks if 2 values are equal for long double - uses epsilon differences.</p></li>
+    </ul>
+    <h2 class='fileHeader'>triangle.hpp</h2>
+    <ul>
+        <code class='prettyprint'> <h3 id='triangle.hppconstexpr explicit triangle(T a1, T a2, T b1, T b2, T c1, T c2);' class='declaration'>constexpr explicit triangle(T a1, T a2, T b1, T b2, T c1, T c2);</h3> </code>
+        <li><p>constructs a triangle</p></li>
+    </ul>
+    <h2 class='fileHeader'>dynamic_matrix_engine.hpp</h2>
+    <ul>
+        <code class='prettyprint'> <h3 id='dynamic_matrix_engine.hppexplicit dynamic_matrix_engine(size_type num, const_reference val);' class='declaration'>explicit dynamic_matrix_engine(size_type num, const_reference val);</h3> </code>
+        <li><p>constructs a dynamic_matrix_engine with a given starting size, and sets each element to a given value.</p></li>
+        <code class='prettyprint'> <h3 id='dynamic_matrix_engine.hppexplicit dynamic_matrix_engine(const storage_type data);' class='declaration'>explicit dynamic_matrix_engine(const storage_type data);</h3> </code>
+        <li><p>constructs a dynamic_matrix_engine with a storage_type data structure.</p></li>
+        <code class='prettyprint'> <h3 id='dynamic_matrix_engine.hppdynamic_matrix_engine(const std::initializer_list&lttype&gt data);' class='declaration'>dynamic_matrix_engine(const std::initializer_list&lttype&gt data);</h3> </code>
+        <li><p>constructs a dynamic_matrix_engine with an std::initiailizer_list data structure.</p></li>
+        <code class='prettyprint'> <h3 id='dynamic_matrix_engine.hppdynamic_matrix_engine& operator=(const storage_type data);' class='declaration'>dynamic_matrix_engine& operator=(const storage_type data);</h3> </code>
+        <li><p>copies a storage_type data structure into the dynamic_matrix_engine.</p></li>
+        <code class='prettyprint'> <h3 id='dynamic_matrix_engine.hppdynamic_matrix_engine& operator=(const std::initializer_list&lttype&gt data);' class='declaration'>dynamic_matrix_engine& operator=(const std::initializer_list&lttype&gt data);</h3> </code>
+        <li><p>copies an std::initializer_list data structure into the dynamic_matrix_engine.</p></li>
+        <code class='prettyprint'> <h3 id='dynamic_matrix_engine.hppreference operator[](const size_type index);' class='declaration'>reference operator[](const size_type index);</h3> </code>
+        <li><p>returns a reference to an element at the given index.</p></li>
+        <code class='prettyprint'> <h3 id='dynamic_matrix_engine.hppconst_reference operator[](const size_type index) const;' class='declaration'>const_reference operator[](const size_type index) const;</h3> </code>
+        <li><p>returns a const reference to an element at the given index.</p></li>
+        <code class='prettyprint'> <h3 id='dynamic_matrix_engine.hppreference operator()(const size_type i, const size_type j);' class='declaration'>reference operator()(const size_type i, const size_type j);</h3> </code>
+        <li><p>returns a reference to an element at the given i and j indexes.</p></li>
+        <code class='prettyprint'> <h3 id='dynamic_matrix_engine.hppconst_reference operator()(const size_type i, const size_type j) const;' class='declaration'>const_reference operator()(const size_type i, const size_type j) const;</h3> </code>
+        <li><p>returns a const reference to an element at the given i and j indexes.</p></li>
+        <code class='prettyprint'> <h3 id='dynamic_matrix_engine.hppconstexpr auto order() const noexcept;' class='declaration'>constexpr auto order() const noexcept;</h3> </code>
+        <li><p>returns the order of the matrix (e.g. row / column major.)</p></li>
+        <code class='prettyprint'> <h3 id='dynamic_matrix_engine.hppauto data() const noexcept;' class='declaration'>auto data() const noexcept;</h3> </code>
+        <li><p>returns the underlying data as an instance of the storage_type.</p></li>
+        <code class='prettyprint'> <h3 id='dynamic_matrix_engine.hppauto size() const noexcept;' class='declaration'>auto size() const noexcept;</h3> </code>
+        <li><p>returns the total number of elements within the matrix.</p></li>
+        <code class='prettyprint'> <h3 id='dynamic_matrix_engine.hppauto capacity() const noexcept;' class='declaration'>auto capacity() const noexcept;</h3> </code>
+        <li><p>returns the total number of elements possible within the matrix.</p></li>
+        <code class='prettyprint'> <h3 id='dynamic_matrix_engine.hppauto rows() const noexcept;' class='declaration'>auto rows() const noexcept;</h3> </code>
+        <li><p>returns the total number of rows.</p></li>
+        <code class='prettyprint'> <h3 id='dynamic_matrix_engine.hppauto rows_capacity() const noexcept;' class='declaration'>auto rows_capacity() const noexcept;</h3> </code>
+        <li><p>returns the total number of rows possible.</p></li>
+        <code class='prettyprint'> <h3 id='dynamic_matrix_engine.hppauto columns() const noexcept;' class='declaration'>auto columns() const noexcept;</h3> </code>
+        <li><p>returns the total number of columns.</p></li>
+        <code class='prettyprint'> <h3 id='dynamic_matrix_engine.hppauto columns_capacity() const noexcept;' class='declaration'>auto columns_capacity() const noexcept;</h3> </code>
+        <li><p>returns the total number of columns possible.</p></li>
+        <code class='prettyprint'> <h3 id='dynamic_matrix_engine.hppvoid resize(const size_type rows, const size_type cols);' class='declaration'>void resize(const size_type rows, const size_type cols);</h3> </code>
+        <li><p>adjusts the maximum row and column size of the dynamic_matrix_engine to the given row and a column sizes.</p></li>
+        <code class='prettyprint'> <h3 id='dynamic_matrix_engine.hppvoid reserve(const size_type rows_capacity, const size_type cols_capacity);' class='declaration'>void reserve(const size_type rows_capacity, const size_type cols_capacity);</h3> </code>
+        <li><p>adjusts both the row and column capacity of the dynamic_matrix_engine to the given row and column capacities.</p></li>
+        <code class='prettyprint'> <h3 id='dynamic_matrix_engine.hppvoid resize_and_reserve(const size_type rows, const size_type rows_capacity, const size_type cols, const size_type cols_capacity);' class='declaration'>void resize_and_reserve(const size_type rows, const size_type rows_capacity, const size_type cols, const size_type cols_capacity);</h3> </code>
+        <li><p>adjusts both the size and capacity of the dynamic_matrix_engine in one.</p></li>
+        <code class='prettyprint'> <h3 id='dynamic_matrix_engine.hppvoid fill(const_reference n);' class='declaration'>void fill(const_reference n);</h3> </code>
+        <li><p>sets each element within the dynamic_matrix_engine to a given value.</p></li>
+    </ul>
+    <h2 class='fileHeader'>dynamic_vector_engine.hpp</h2>
+    <ul>
+        <code class='prettyprint'> <h3 id='dynamic_vector_engine.hppexplicit dynamic_vector_engine(size_type num, const_reference val = type());' class='declaration'>explicit dynamic_vector_engine(size_type num, const_reference val = type());</h3> </code>
+        <li><p>constructs a dynamic_vector_engine with a given starting size, and sets each element to a given value.</p></li>
+        <code class='prettyprint'> <h3 id='dynamic_vector_engine.hppexplicit dynamic_vector_engine(const storage_type data);' class='declaration'>explicit dynamic_vector_engine(const storage_type data);</h3> </code>
+        <li><p>constructs a dynamic_vector_engine with a storage_type data structure.</p></li>
+        <code class='prettyprint'> <h3 id='dynamic_vector_engine.hppdynamic_vector_engine(const std::initializer_list&lttype&gt data);' class='declaration'>dynamic_vector_engine(const std::initializer_list&lttype&gt data);</h3> </code>
+        <li><p>constructs a dynamic_vector_engine with an std::initializer_list data structure.</p></li>
+        <code class='prettyprint'> <h3 id='dynamic_vector_engine.hppdynamic_vector_engine& operator=(const storage_type data);' class='declaration'>dynamic_vector_engine& operator=(const storage_type data);</h3> </code>
+        <li><p>copies a storage_type data structure into the dynamic_vector_engine.</p></li>
+        <code class='prettyprint'> <h3 id='dynamic_vector_engine.hppdynamic_vector_engine& operator=(const std::initializer_list&lttype&gt data);' class='declaration'>dynamic_vector_engine& operator=(const std::initializer_list&lttype&gt data);</h3> </code>
+        <li><p>copies an std::initializer_list data structure into the dynamic_vector_engine.</p></li>
+        <code class='prettyprint'> <h3 id='dynamic_vector_engine.hppreference operator[](const size_type index) noexcept;' class='declaration'>reference operator[](const size_type index) noexcept;</h3> </code>
+        <li><p>returns a reference to an element at the given index.</p></li>
+        <code class='prettyprint'> <h3 id='dynamic_vector_engine.hppconst_reference operator[](const size_type index) const noexcept;' class='declaration'>const_reference operator[](const size_type index) const noexcept;</h3> </code>
+        <li><p>returns a const reference to an element at the given index.</p></li>
+        <code class='prettyprint'> <h3 id='dynamic_vector_engine.hppauto begin() noexcept;' class='declaration'>auto begin() noexcept;</h3> </code>
+        <li><p>return the begin iterator.</p></li>
+        <code class='prettyprint'> <h3 id='dynamic_vector_engine.hppauto begin() const noexcept;' class='declaration'>auto begin() const noexcept;</h3> </code>
+        <li><p>return the begin iterator without modifying elements.</p></li>
+        <code class='prettyprint'> <h3 id='dynamic_vector_engine.hppauto end() noexcept;' class='declaration'>auto end() noexcept;</h3> </code>
+        <li><p>return the end iterator.</p></li>
+        <code class='prettyprint'> <h3 id='dynamic_vector_engine.hppauto end() const noexcept;' class='declaration'>auto end() const noexcept;</h3> </code>
+        <li><p>return the end iterator without modifying elements.</p></li>
+        <code class='prettyprint'> <h3 id='dynamic_vector_engine.hppauto rbegin() noexcept;' class='declaration'>auto rbegin() noexcept;</h3> </code>
+        <li><p>returns the reverse begin iterator.</p></li>
+        <code class='prettyprint'> <h3 id='dynamic_vector_engine.hppauto rbegin() const noexcept;' class='declaration'>auto rbegin() const noexcept;</h3> </code>
+        <li><p>returns the reverse begin iterator without modifying elements.</p></li>
+        <code class='prettyprint'> <h3 id='dynamic_vector_engine.hppauto rend() noexcept;' class='declaration'>auto rend() noexcept;</h3> </code>
+        <li><p>returns the reverse end iterator.</p></li>
+        <code class='prettyprint'> <h3 id='dynamic_vector_engine.hppauto rend() const noexcept;' class='declaration'>auto rend() const noexcept;</h3> </code>
+        <li><p>returns the reverse end iterator without modifying elements.</p></li>
+        <code class='prettyprint'> <h3 id='dynamic_vector_engine.hppauto cbegin() const noexcept;' class='declaration'>auto cbegin() const noexcept;</h3> </code>
+        <li><p>returns the const begin iterator.</p></li>
+        <code class='prettyprint'> <h3 id='dynamic_vector_engine.hppauto cend() const noexcept;' class='declaration'>auto cend() const noexcept;</h3> </code>
+        <li><p>returns the const end iterator.</p></li>
+        <code class='prettyprint'> <h3 id='dynamic_vector_engine.hppauto crbegin() const noexcept;' class='declaration'>auto crbegin() const noexcept;</h3> </code>
+        <li><p>returns the const reverse begin iterator.</p></li>
+        <code class='prettyprint'> <h3 id='dynamic_vector_engine.hppauto crend() const noexcept;' class='declaration'>auto crend() const noexcept;</h3> </code>
+        <li><p>returns the const reverse end iterator.</p></li>
+        <code class='prettyprint'> <h3 id='dynamic_vector_engine.hppauto data() const noexcept;' class='declaration'>auto data() const noexcept;</h3> </code>
+        <li><p>returns the underlying data as an instance of the storage_type.</p></li>
+        <code class='prettyprint'> <h3 id='dynamic_vector_engine.hppauto size() const noexcept;' class='declaration'>auto size() const noexcept;</h3> </code>
+        <li><p>returns the total number of elements within the fixed_vector_engine.</p></li>
+        <code class='prettyprint'> <h3 id='dynamic_vector_engine.hppauto capacity() const noexcept;' class='declaration'>auto capacity() const noexcept;</h3> </code>
+        <li><p>returns the total number of elements possible within the fixed_vector_engine.</p></li>
+        <code class='prettyprint'> <h3 id='dynamic_vector_engine.hppvoid resize(size_type size);' class='declaration'>void resize(size_type size);</h3> </code>
+        <li><p>adjusts the current size of the dynamic_vector_engine to the given size.</p></li>
+        <code class='prettyprint'> <h3 id='dynamic_vector_engine.hppvoid reserve(size_type capacity);' class='declaration'>void reserve(size_type capacity);</h3> </code>
+        <li><p>adjusts the maximum capacity of the dynamic_vector_engine to the given capacity.</p></li>
+        <code class='prettyprint'> <h3 id='dynamic_vector_engine.hppvoid resize_and_reserve(size_type size, size_type capacity);' class='declaration'>void resize_and_reserve(size_type size, size_type capacity);</h3> </code>
+        <li><p>adjusts both the size and capacity of the dynamic_vector_engine in one.</p></li>
+        <code class='prettyprint'> <h3 id='dynamic_vector_engine.hppvoid fill(const_reference n);' class='declaration'>void fill(const_reference n);</h3> </code>
+        <li><p>sets each element within the fixed_vector_engine to a given value.</p></li>
+    </ul>
+    <h2 class='fileHeader'>engine_properties.hpp</h2>
+    <ul>
+        <code class='prettyprint'> <h3 id='engine_properties.hppstruct engine_properties' class='declaration'>struct engine_properties</h3> </code>
+        <li><p>a default case for engine_properties with all settings to false.</p></li>
+        <code class='prettyprint'> <h3 id='engine_properties.hppstruct engine_properties&ltresizable_vector_engine_type&gt' class='declaration'>struct engine_properties&ltresizable_vector_engine_type&gt</h3> </code>
+        <li><p>signifies that an engine is a resizeable vector engine and sets appropriate settings.</p></li>
+        <code class='prettyprint'> <h3 id='engine_properties.hppstruct engine_properties&ltfixed_vector_engine_type&gt' class='declaration'>struct engine_properties&ltfixed_vector_engine_type&gt</h3> </code>
+        <li><p>signifies that an engine is a fixed sized vector engine and sets appropriate settings.</p></li>
+        <code class='prettyprint'> <h3 id='engine_properties.hppstruct engine_properties&ltresizable_matrix_engine_type&gt' class='declaration'>struct engine_properties&ltresizable_matrix_engine_type&gt</h3> </code>
+        <li><p>signifies that an engine is a resizeable matrix engine and sets appropriate settings.</p></li>
+        <code class='prettyprint'> <h3 id='engine_properties.hppstruct engine_properties&ltfixed_matrix_engine_type&gt' class='declaration'>struct engine_properties&ltfixed_matrix_engine_type&gt</h3> </code>
+        <li><p>signifies that an engine is a fixed sized matrix engine and sets appropriate settings.</p></li>
+    </ul>
+    <h2 class='fileHeader'>fixed_matrix_engine.hpp</h2>
+    <ul>
+        <code class='prettyprint'> <h3 id='fixed_matrix_engine.hppconstexpr fixed_matrix_engine();' class='declaration'>constexpr fixed_matrix_engine();</h3> </code>
+        <li><p>constructs an empty fixed_matrix_engine.</p></li>
+        <code class='prettyprint'> <h3 id='fixed_matrix_engine.hppconstexpr explicit fixed_matrix_engine(const storage_type data);' class='declaration'>constexpr explicit fixed_matrix_engine(const storage_type data);</h3> </code>
+        <li><p>constructs a fixed_matrix_engine with a storage_type data structure.</p></li>
+        <code class='prettyprint'> <h3 id='fixed_matrix_engine.hppconstexpr fixed_matrix_engine(const std::initializer_list&lttype&gt data);' class='declaration'>constexpr fixed_matrix_engine(const std::initializer_list&lttype&gt data);</h3> </code>
+        <li><p>constructs a fixed_matrix_engine with an std::initializer_list data structure.</p></li>
+        <code class='prettyprint'> <h3 id='fixed_matrix_engine.hppconstexpr fixed_matrix_engine& operator=(const storage_type data);' class='declaration'>constexpr fixed_matrix_engine& operator=(const storage_type data);</h3> </code>
+        <li><p>copies a storage_type data structure into the fixed_matrix_engine.</p></li>
+        <code class='prettyprint'> <h3 id='fixed_matrix_engine.hppconstexpr fixed_matrix_engine& operator=(const std::initializer_list&lttype&gt data);' class='declaration'>constexpr fixed_matrix_engine& operator=(const std::initializer_list&lttype&gt data);</h3> </code>
+        <li><p>copies an std::initializer_list data structure into the fixed_matrix_engine.</p></li>
+        <code class='prettyprint'> <h3 id='fixed_matrix_engine.hppconstexpr reference operator[](const size_type index);' class='declaration'>constexpr reference operator[](const size_type index);</h3> </code>
+        <li><p>returns a reference to an element at the given index.</p></li>
+        <code class='prettyprint'> <h3 id='fixed_matrix_engine.hppconstexpr const_reference operator[](const size_type index) const;' class='declaration'>constexpr const_reference operator[](const size_type index) const;</h3> </code>
+        <li><p>returns a const reference to an element at the given index.</p></li>
+        <code class='prettyprint'> <h3 id='fixed_matrix_engine.hppconstexpr reference operator()(const size_type i, const size_type j);' class='declaration'>constexpr reference operator()(const size_type i, const size_type j);</h3> </code>
+        <li><p>returns a reference to an element at the given i and j indexes.</p></li>
+        <code class='prettyprint'> <h3 id='fixed_matrix_engine.hppconstexpr const_reference operator()(const size_type i, const size_type j) const;' class='declaration'>constexpr const_reference operator()(const size_type i, const size_type j) const;</h3> </code>
+        <li><p>returns a const reference to an element at the given i and j indexes.</p></li>
+        <code class='prettyprint'> <h3 id='fixed_matrix_engine.hppconstexpr auto begin() noexcept;' class='declaration'>constexpr auto begin() noexcept;</h3> </code>
+        <li><p>return the begin iterator.</p></li>
+        <code class='prettyprint'> <h3 id='fixed_matrix_engine.hppconstexpr auto begin() const noexcept;' class='declaration'>constexpr auto begin() const noexcept;</h3> </code>
+        <li><p>return the begin iterator without modifying elements.</p></li>
+        <code class='prettyprint'> <h3 id='fixed_matrix_engine.hppconstexpr auto end() noexcept;' class='declaration'>constexpr auto end() noexcept;</h3> </code>
+        <li><p>return the end iterator.</p></li>
+        <code class='prettyprint'> <h3 id='fixed_matrix_engine.hppconstexpr auto end() const noexcept;' class='declaration'>constexpr auto end() const noexcept;</h3> </code>
+        <li><p>return the end iterator without modifying elements.</p></li>
+        <code class='prettyprint'> <h3 id='fixed_matrix_engine.hppconstexpr auto order() const noexcept;' class='declaration'>constexpr auto order() const noexcept;</h3> </code>
+        <li><p>returns the order of the matrix (e.g. row / column major.)</p></li>
+        <code class='prettyprint'> <h3 id='fixed_matrix_engine.hppconstexpr auto data() const noexcept;' class='declaration'>constexpr auto data() const noexcept;</h3> </code>
+        <li><p>returns the underlying data as an instance of the storage_type.</p></li>
+        <code class='prettyprint'> <h3 id='fixed_matrix_engine.hppconstexpr auto size() const noexcept;' class='declaration'>constexpr auto size() const noexcept;</h3> </code>
+        <li><p>returns the total number of elements within the matrix.</p></li>
+        <code class='prettyprint'> <h3 id='fixed_matrix_engine.hppconstexpr auto capacity() const noexcept;' class='declaration'>constexpr auto capacity() const noexcept;</h3> </code>
+        <li><p>returns the total number of elements possible within the matrix.</p></li>
+        <code class='prettyprint'> <h3 id='fixed_matrix_engine.hppconstexpr auto rows() const noexcept;' class='declaration'>constexpr auto rows() const noexcept;</h3> </code>
+        <li><p>returns the total number of rows.</p></li>
+        <code class='prettyprint'> <h3 id='fixed_matrix_engine.hppconstexpr auto rows_capacity() const noexcept;' class='declaration'>constexpr auto rows_capacity() const noexcept;</h3> </code>
+        <li><p>returns the total number of rows possible.</p></li>
+        <code class='prettyprint'> <h3 id='fixed_matrix_engine.hppconstexpr auto columns() const noexcept;' class='declaration'>constexpr auto columns() const noexcept;</h3> </code>
+        <li><p>returns the total number of columns.</p></li>
+        <code class='prettyprint'> <h3 id='fixed_matrix_engine.hppconstexpr auto columns_capacity() const noexcept;' class='declaration'>constexpr auto columns_capacity() const noexcept;</h3> </code>
+        <li><p>returns the total number of columns possible.</p></li>
+        <code class='prettyprint'> <h3 id='fixed_matrix_engine.hppconstexpr void fill(const_reference n);' class='declaration'>constexpr void fill(const_reference n);</h3> </code>
+        <li><p>sets each element within the fixed_matrix_engine to a given value.</p></li>
+        <code class='prettyprint'> <h3 id='fixed_matrix_engine.hppstorage_type m_data;' class='declaration'>storage_type m_data;</h3> </code>
+        <li><p>stores the data for the fixed_matrix_engine.</p></li>
+        <code class='prettyprint'> <h3 id='fixed_matrix_engine.hppstatic constexpr size_type m_rows = R;' class='declaration'>static constexpr size_type m_rows = R;</h3> </code>
+        <li><p>stores the number of rows present in the fixed_matrix_engine.</p></li>
+        <code class='prettyprint'> <h3 id='fixed_matrix_engine.hppstatic constexpr size_type m_rows_capacity = R;' class='declaration'>static constexpr size_type m_rows_capacity = R;</h3> </code>
+        <li><p>stores the maximum number of rows present in the fixed_matrix_engine.</p></li>
+        <code class='prettyprint'> <h3 id='fixed_matrix_engine.hppstatic constexpr size_type m_columns = C;' class='declaration'>static constexpr size_type m_columns = C;</h3> </code>
+        <li><p>stores the number of columns present in the fixed_matrix_engine.</p></li>
+        <code class='prettyprint'> <h3 id='fixed_matrix_engine.hppstatic constexpr size_type m_columns_capacity = C;' class='declaration'>static constexpr size_type m_columns_capacity = C;</h3> </code>
+        <li><p>stores the maximum number of columns present in the fixed_matrix_engine.</p></li>
+        <code class='prettyprint'> <h3 id='fixed_matrix_engine.hppstatic constexpr MatrixOrder m_order = O;' class='declaration'>static constexpr MatrixOrder m_order = O;</h3> </code>
+        <li><p>stores the order type present in the fixed_matrix_engine.</p></li>
+        <code class='prettyprint'> <h3 id='fixed_matrix_engine.hppconstexpr auto index(const size_type i, const size_type j) const;' class='declaration'>constexpr auto index(const size_type i, const size_type j) const;</h3> </code>
+        <li><p>calculates the index based on the order type when accessing using [] () operators.</p></li>
+    </ul>
+    <h2 class='fileHeader'>fixed_vector_engine.hpp</h2>
+    <ul>
+        <code class='prettyprint'> <h3 id='fixed_vector_engine.hppconstexpr fixed_vector_engine();' class='declaration'>constexpr fixed_vector_engine();</h3> </code>
+        <li><p>constructs an empty fixed_vector_engine.</p></li>
+        <code class='prettyprint'> <h3 id='fixed_vector_engine.hppconstexpr explicit fixed_vector_engine(const storage_type data);' class='declaration'>constexpr explicit fixed_vector_engine(const storage_type data);</h3> </code>
+        <li><p>constructs a fixed_vector_engine with a storage_type data structure.</p></li>
+        <code class='prettyprint'> <h3 id='fixed_vector_engine.hppconstexpr fixed_vector_engine(const std::initializer_list&lttype&gt data);' class='declaration'>constexpr fixed_vector_engine(const std::initializer_list&lttype&gt data);</h3> </code>
+        <li><p>constructs a fixed_vector_engine with an std::initializer_list data structure.</p></li>
+        <code class='prettyprint'> <h3 id='fixed_vector_engine.hppconstexpr fixed_vector_engine& operator=(const storage_type data);' class='declaration'>constexpr fixed_vector_engine& operator=(const storage_type data);</h3> </code>
+        <li><p>copies a storage_type data structure into the fixed_vector_engine.</p></li>
+        <code class='prettyprint'> <h3 id='fixed_vector_engine.hppconstexpr fixed_vector_engine& operator=(const std::initializer_list&lttype&gt data);' class='declaration'>constexpr fixed_vector_engine& operator=(const std::initializer_list&lttype&gt data);</h3> </code>
+        <li><p>copies an std::initializer_list data structure into the fixed_vector_engine.</p></li>
+        <code class='prettyprint'> <h3 id='fixed_vector_engine.hppconstexpr reference operator[](const size_type index) noexcept;' class='declaration'>constexpr reference operator[](const size_type index) noexcept;</h3> </code>
+        <li><p>returns a reference to an element at the given index.</p></li>
+        <code class='prettyprint'> <h3 id='fixed_vector_engine.hppconstexpr const_reference operator[](const size_type index) const noexcept;' class='declaration'>constexpr const_reference operator[](const size_type index) const noexcept;</h3> </code>
+        <li><p>returns a const reference to an element at the given index.</p></li>
+        <code class='prettyprint'> <h3 id='fixed_vector_engine.hppconstexpr auto begin() noexcept;' class='declaration'>constexpr auto begin() noexcept;</h3> </code>
+        <li><p>return the begin iterator.</p></li>
+        <code class='prettyprint'> <h3 id='fixed_vector_engine.hppconstexpr auto begin() const noexcept;' class='declaration'>constexpr auto begin() const noexcept;</h3> </code>
+        <li><p>return the begin iterator without modifying elements.</p></li>
+        <code class='prettyprint'> <h3 id='fixed_vector_engine.hppconstexpr auto end() noexcept;' class='declaration'>constexpr auto end() noexcept;</h3> </code>
+        <li><p>return the end iterator.</p></li>
+        <code class='prettyprint'> <h3 id='fixed_vector_engine.hppconstexpr auto end() const noexcept;' class='declaration'>constexpr auto end() const noexcept;</h3> </code>
+        <li><p>return the end iterator without modifying elements.</p></li>
+        <code class='prettyprint'> <h3 id='fixed_vector_engine.hppconstexpr auto rbegin() noexcept;' class='declaration'>constexpr auto rbegin() noexcept;</h3> </code>
+        <li><p>returns the reverse begin iterator.</p></li>
+        <code class='prettyprint'> <h3 id='fixed_vector_engine.hppconstexpr auto rbegin() const noexcept;' class='declaration'>constexpr auto rbegin() const noexcept;</h3> </code>
+        <li><p>returns the reverse begin iterator without modifying elements.</p></li>
+        <code class='prettyprint'> <h3 id='fixed_vector_engine.hppconstexpr auto rend() noexcept;' class='declaration'>constexpr auto rend() noexcept;</h3> </code>
+        <li><p>returns the reverse end iterator.</p></li>
+        <code class='prettyprint'> <h3 id='fixed_vector_engine.hppconstexpr auto rend() const noexcept;' class='declaration'>constexpr auto rend() const noexcept;</h3> </code>
+        <li><p>returns the reverse end iterator without modifying elements.</p></li>
+        <code class='prettyprint'> <h3 id='fixed_vector_engine.hppconstexpr auto cbegin() const noexcept;' class='declaration'>constexpr auto cbegin() const noexcept;</h3> </code>
+        <li><p>returns the const begin iterator.</p></li>
+        <code class='prettyprint'> <h3 id='fixed_vector_engine.hppconstexpr auto cend() const noexcept;' class='declaration'>constexpr auto cend() const noexcept;</h3> </code>
+        <li><p>returns the const end iterator.</p></li>
+        <code class='prettyprint'> <h3 id='fixed_vector_engine.hppconstexpr auto crbegin() const noexcept;' class='declaration'>constexpr auto crbegin() const noexcept;</h3> </code>
+        <li><p>returns the const reverse begin iterator.</p></li>
+        <code class='prettyprint'> <h3 id='fixed_vector_engine.hppconstexpr auto crend() const noexcept;' class='declaration'>constexpr auto crend() const noexcept;</h3> </code>
+        <li><p>returns the const reverse end iterator.</p></li>
+        <code class='prettyprint'> <h3 id='fixed_vector_engine.hppconstexpr auto data() const noexcept;' class='declaration'>constexpr auto data() const noexcept;</h3> </code>
+        <li><p>returns the underlying data as an instance of the storage_type.</p></li>
+        <code class='prettyprint'> <h3 id='fixed_vector_engine.hppconstexpr auto size() const noexcept;' class='declaration'>constexpr auto size() const noexcept;</h3> </code>
+        <li><p>returns the total number of elements within the fixed_vector_engine.</p></li>
+        <code class='prettyprint'> <h3 id='fixed_vector_engine.hppconstexpr auto capacity() const noexcept;' class='declaration'>constexpr auto capacity() const noexcept;</h3> </code>
+        <li><p>returns the total number of elements possible within the fixed_vector_engine.</p></li>
+        <code class='prettyprint'> <h3 id='fixed_vector_engine.hppconstexpr void fill(const_reference n);' class='declaration'>constexpr void fill(const_reference n);</h3> </code>
+        <li><p>sets each element within the fixed_vector_engine to a given value.</p></li>
+    </ul>
+    <h2 class='fileHeader'>linear_algebra_math.hpp</h2>
+    <ul>
+        <code class='prettyprint'> <h3 id='linear_algebra_math.hppconstexpr auto dot_product(const vector&ltENG1&gt& lhs, const vector&ltENG2&gt& rhs)' class='declaration'>constexpr auto dot_product(const vector&ltENG1&gt& lhs, const vector&ltENG2&gt& rhs)</h3> </code>
+        <li><p>calculates the dot product between 2 vectors of equal dimensions.</p></li>
+        <code class='prettyprint'> <h3 id='linear_algebra_math.hppconstexpr auto dot_product(const vector&ltENG1&gt& lhs, const vector&ltENG2&gt& rhs, double angle)' class='declaration'>constexpr auto dot_product(const vector&ltENG1&gt& lhs, const vector&ltENG2&gt& rhs, double angle)</h3> </code>
+        <li><p>calculates the dot product between 2 vectors of equal dimensions, using an angle between them.</p></li>
+        <code class='prettyprint'> <h3 id='linear_algebra_math.hppconstexpr auto cross_product(const vector&ltENG1&gt& lhs, const vector&ltENG2&gt& rhs)' class='declaration'>constexpr auto cross_product(const vector&ltENG1&gt& lhs, const vector&ltENG2&gt& rhs)</h3> </code>
+        <li><p>calculates the cross product between 2 vectors but must be 3 dimensional.</p></li>
+        <code class='prettyprint'> <h3 id='linear_algebra_math.hppconstexpr auto cross_product(const vector&ltENG1&gt& lhs, const vector&ltENG2&gt& rhs, double angle)' class='declaration'>constexpr auto cross_product(const vector&ltENG1&gt& lhs, const vector&ltENG2&gt& rhs, double angle)</h3> </code>
+        <li><p>calculates the cross product between 2 vectors of 3 dimensions, using an angle between them.</p></li>
+        <code class='prettyprint'> <h3 id='linear_algebra_math.hppconstexpr auto angle_between(const vector&ltENG1&gt& lhs, const vector&ltENG2&gt& rhs)' class='declaration'>constexpr auto angle_between(const vector&ltENG1&gt& lhs, const vector&ltENG2&gt& rhs)</h3> </code>
+        <li><p>calculates the angle between 2 given vectors of equal dimensions.</p></li>
+        <code class='prettyprint'> <h3 id='linear_algebra_math.hppconstexpr auto scalar_triplet_product(const vector&ltENG1&gt& v1, const vector&ltENG2&gt& v2, const vector&ltENG3&gt& v3)' class='declaration'>constexpr auto scalar_triplet_product(const vector&ltENG1&gt& v1, const vector&ltENG2&gt& v2, const vector&ltENG3&gt& v3)</h3> </code>
+        <li><p>calculates the scalar triplet product between 3 vectors of 3 dimensions.</p></li>
+        <code class='prettyprint'> <h3 id='linear_algebra_math.hppconstexpr auto direction_cosine_alpha(const vector&ltENG&gt& v)' class='declaration'>constexpr auto direction_cosine_alpha(const vector&ltENG&gt& v)</h3> </code>
+        <li><p>calculates the alpha direction of a given vector of 3 dimensions.</p></li>
+        <code class='prettyprint'> <h3 id='linear_algebra_math.hppconstexpr auto direction_cosine_beta(const vector&ltENG&gt& v)' class='declaration'>constexpr auto direction_cosine_beta(const vector&ltENG&gt& v)</h3> </code>
+        <li><p>calculates the cosine direction of a given vector of 3 dimensions.</p></li>
+        <code class='prettyprint'> <h3 id='linear_algebra_math.hppconstexpr auto direction_cosine_gamma(const vector&ltENG&gt& v)' class='declaration'>constexpr auto direction_cosine_gamma(const vector&ltENG&gt& v)</h3> </code>
+        <li><p>calculates the gamma direction of a given vector of 3 dimensions.</p></li>
+        <code class='prettyprint'> <h3 id='linear_algebra_math.hppconstexpr auto vector_projection(const vector&ltENG1&gt& lhs, const vector&ltENG2&gt& rhs)' class='declaration'>constexpr auto vector_projection(const vector&ltENG1&gt& lhs, const vector&ltENG2&gt& rhs)</h3> </code>
+        <li><p>calculates the vector projection between 2 vectors, must be equal dimensions.</p></li>
+        <code class='prettyprint'> <h3 id='linear_algebra_math.hppconstexpr auto scalar_projection(const vector&ltENG1&gt& lhs, const vector&ltENG2&gt& rhs)' class='declaration'>constexpr auto scalar_projection(const vector&ltENG1&gt& lhs, const vector&ltENG2&gt& rhs)</h3> </code>
+        <li><p>calculates the scalar projection between 2 vectors, must be equal dimensions.</p></li>
+        <code class='prettyprint'> <h3 id='linear_algebra_math.hppconstexpr bool are_orthogonal(const vector&ltENG1&gt& lhs, const vector&ltENG2&gt& rhs)' class='declaration'>constexpr bool are_orthogonal(const vector&ltENG1&gt& lhs, const vector&ltENG2&gt& rhs)</h3> </code>
+        <li><p>determines if 2 vectors are orthogonal to eachother.</p></li>
+        <code class='prettyprint'> <h3 id='linear_algebra_math.hppconstexpr bool are_collinear(const vector&ltENG1&gt& lhs, const vector&ltENG2&gt& rhs)' class='declaration'>constexpr bool are_collinear(const vector&ltENG1&gt& lhs, const vector&ltENG2&gt& rhs)</h3> </code>
+        <li><p>determines if 2 vectors are collinear to eachother.</p></li>
+        <code class='prettyprint'> <h3 id='linear_algebra_math.hppconstexpr bool are_coplanar(const vector&ltENG1&gt& v1, const vector&ltENG2&gt& v2, const vector&ltENG3&gt& v3)' class='declaration'>constexpr bool are_coplanar(const vector&ltENG1&gt& v1, const vector&ltENG2&gt& v2, const vector&ltENG3&gt& v3)</h3> </code>
+        <li><p>determines if 2 vectors are coplanar to eachother.</p></li>
+    </ul>
+    <h2 class='fileHeader'>linear_algebra_traits.hpp</h2>
+    <ul>
+        <code class='prettyprint'> <h3 id='linear_algebra_traits.hppstruct is_engine_matrix' class='declaration'>struct is_engine_matrix</h3> </code>
+        <li><p>determines if an engine is an engine for matrices.</p></li>
+        <code class='prettyprint'> <h3 id='linear_algebra_traits.hppstruct is_engine_vector' class='declaration'>struct is_engine_vector</h3> </code>
+        <li><p>determines if an engine is an engine for vectors.</p></li>
+        <code class='prettyprint'> <h3 id='linear_algebra_traits.hppstruct is_engine_fixed' class='declaration'>struct is_engine_fixed</h3> </code>
+        <li><p>determines if an engine is fixed_type when managing memory.</p></li>
+        <code class='prettyprint'> <h3 id='linear_algebra_traits.hppstruct is_engine_resizable' class='declaration'>struct is_engine_resizable</h3> </code>
+        <li><p>determines if an engine is dynamic_type when managing memory.</p></li>
+        <code class='prettyprint'> <h3 id='linear_algebra_traits.hpp - data type [x]' class='declaration'> - data type [x]</h3> </code>
+        <li><p> promotion</p></li>
+        <code class='prettyprint'> <h3 id='linear_algebra_traits.hpp - memory management type' class='declaration'> - memory management type</h3> </code>
+        <li><p> - dimension</p></li>
+    </ul>
+    <h2 class='fileHeader'>matrix.hpp</h2>
+    <ul>
+        <code class='prettyprint'> <h3 id='matrix.hppconstexpr matrix();' class='declaration'>constexpr matrix();</h3> </code>
+        <li><p>constructs an empty matrix.</p></li>
+        <code class='prettyprint'> <h3 id='matrix.hppconstexpr explicit matrix(const storage_type data);' class='declaration'>constexpr explicit matrix(const storage_type data);</h3> </code>
+        <li><p>constructs a matrix with a storage_type data structure.</p></li>
+        <code class='prettyprint'> <h3 id='matrix.hppconstexpr matrix(const std::initializer_list&lttype&gt data);' class='declaration'>constexpr matrix(const std::initializer_list&lttype&gt data);</h3> </code>
+        <li><p>constructs a matrix with an std::initializer_list data structure.</p></li>
+        <code class='prettyprint'> <h3 id='matrix.hppconstexpr explicit matrix(const ENG& engine);' class='declaration'>constexpr explicit matrix(const ENG& engine);</h3> </code>
+        <li><p>constructs a matrix with an engine provided.</p></li>
+        <code class='prettyprint'> <h3 id='matrix.hppconstexpr matrix& operator=(const storage_type data);' class='declaration'>constexpr matrix& operator=(const storage_type data);</h3> </code>
+        <li><p>copies a storage_type data structure into the matrix.</p></li>
+        <code class='prettyprint'> <h3 id='matrix.hppconstexpr matrix& operator=(const std::initializer_list&lttype&gt data);' class='declaration'>constexpr matrix& operator=(const std::initializer_list&lttype&gt data);</h3> </code>
+        <li><p>copies an std::initializer_list data structure into the matrix.</p></li>
+        <code class='prettyprint'> <h3 id='matrix.hppconstexpr matrix& operator=(const ENG& engine);' class='declaration'>constexpr matrix& operator=(const ENG& engine);</h3> </code>
+        <li><p>copies an engine into the matrix.</p></li>
+        <code class='prettyprint'> <h3 id='matrix.hppconstexpr reference operator[](const size_type index);' class='declaration'>constexpr reference operator[](const size_type index);</h3> </code>
+        <li><p>returns a reference to an element at a given index.</p></li>
+        <code class='prettyprint'> <h3 id='matrix.hppconstexpr const_reference operator[](const size_type index) const;' class='declaration'>constexpr const_reference operator[](const size_type index) const;</h3> </code>
+        <li><p>returns a const reference to an element at a given index.</p></li>
+        <code class='prettyprint'> <h3 id='matrix.hppconstexpr reference operator()(const size_type i, const size_type j);' class='declaration'>constexpr reference operator()(const size_type i, const size_type j);</h3> </code>
+        <li><p>returns a reference to an element at the given i and j indexes.</p></li>
+        <code class='prettyprint'> <h3 id='matrix.hppconstexpr const_reference operator()(const size_type i, const size_type j) const;' class='declaration'>constexpr const_reference operator()(const size_type i, const size_type j) const;</h3> </code>
+        <li><p>returns a const reference to an element at the given i and j indexes.</p></li>
+        <code class='prettyprint'> <h3 id='matrix.hppconstexpr auto order() const noexcept;' class='declaration'>constexpr auto order() const noexcept;</h3> </code>
+        <li><p>returns the order of the matrix (e.g. row / column major.)</p></li>
+        <code class='prettyprint'> <h3 id='matrix.hppconstexpr auto engine() const noexcept;' class='declaration'>constexpr auto engine() const noexcept;</h3> </code>
+        <li><p>returns an instance of the underlying engine type.</p></li>
+        <code class='prettyprint'> <h3 id='matrix.hppconstexpr auto data() const noexcept;' class='declaration'>constexpr auto data() const noexcept;</h3> </code>
+        <li><p>returns the underlying data as an instance of the storage_type.</p></li>
+        <code class='prettyprint'> <h3 id='matrix.hppconstexpr auto dimensions() const noexcept;' class='declaration'>constexpr auto dimensions() const noexcept;</h3> </code>
+        <li><p>returns the total number of elements within the matrix.</p></li>
+        <code class='prettyprint'> <h3 id='matrix.hppconstexpr auto capacity() const noexcept;' class='declaration'>constexpr auto capacity() const noexcept;</h3> </code>
+        <li><p>returns the total number of elements possible within the matrix.</p></li>
+        <code class='prettyprint'> <h3 id='matrix.hppconstexpr auto rows() const noexcept;' class='declaration'>constexpr auto rows() const noexcept;</h3> </code>
+        <li><p>returns the total number of rows.</p></li>
+        <code class='prettyprint'> <h3 id='matrix.hppconstexpr auto rows_capacity() const noexcept;' class='declaration'>constexpr auto rows_capacity() const noexcept;</h3> </code>
+        <li><p>returns the total number of rows possible.</p></li>
+        <code class='prettyprint'> <h3 id='matrix.hppconstexpr auto columns() const noexcept;' class='declaration'>constexpr auto columns() const noexcept;</h3> </code>
+        <li><p>returns the total number of columns.</p></li>
+        <code class='prettyprint'> <h3 id='matrix.hppconstexpr auto columns_capacity() const noexcept;' class='declaration'>constexpr auto columns_capacity() const noexcept;</h3> </code>
+        <li><p>returns the total number of columns possible.</p></li>
+        <code class='prettyprint'> <h3 id='matrix.hppconstexpr auto get_row(size_type index) const;' class='declaration'>constexpr auto get_row(size_type index) const;</h3> </code>
+        <li><p>returns an entire row.</p></li>
+        <code class='prettyprint'> <h3 id='matrix.hppconstexpr auto get_column(size_type index) const;' class='declaration'>constexpr auto get_column(size_type index) const;</h3> </code>
+        <li><p>returns an entire column.</p></li>
+        <code class='prettyprint'> <h3 id='matrix.hppconstexpr void fill(const_reference n);' class='declaration'>constexpr void fill(const_reference n);</h3> </code>
+        <li><p>sets each element within the matrix to a given value.</p></li>
+        <code class='prettyprint'> <h3 id='matrix.hppvoid print() const noexcept;' class='declaration'>void print() const noexcept;</h3> </code>
+        <li><p>outputs every element within the matrix.</p></li>
+        <code class='prettyprint'> <h3 id='matrix.hppvoid tranpose();' class='declaration'>void tranpose();</h3> </code>
+        <li><p>transposes the matrix.</p></li>
+        <code class='prettyprint'> <h3 id='matrix.hppconstexpr auto transposed() const;' class='declaration'>constexpr auto transposed() const;</h3> </code>
+        <li><p>returns a tranpose of the matrix.</p></li>
+        <code class='prettyprint'> <h3 id='matrix.hppinline auto operator+(const matrix&ltENG1&gt& lhs, const matrix&ltENG2&gt& rhs)' class='declaration'>inline auto operator+(const matrix&ltENG1&gt& lhs, const matrix&ltENG2&gt& rhs)</h3> </code>
+        <li><p>adds together 2 matrices of varying engine types.</p></li>
+        <code class='prettyprint'> <h3 id='matrix.hppinline auto operator-(const matrix&ltENG1&gt& lhs, const matrix&ltENG2&gt& rhs)' class='declaration'>inline auto operator-(const matrix&ltENG1&gt& lhs, const matrix&ltENG2&gt& rhs)</h3> </code>
+        <li><p>subtracts 2 matrices of varying engine types.</p></li>
+        <code class='prettyprint'> <h3 id='matrix.hppinline auto operator*(const matrix&ltENG1&gt& lhs, const matrix&ltENG2&gt& rhs)' class='declaration'>inline auto operator*(const matrix&ltENG1&gt& lhs, const matrix&ltENG2&gt& rhs)</h3> </code>
+        <li><p>multiplies together 2 matrices of varying engine types.</p></li>
+        <code class='prettyprint'> <h3 id='matrix.hppinline auto operator==(const matrix&ltENG1&gt& lhs, const matrix&ltENG2&gt& rhs)' class='declaration'>inline auto operator==(const matrix&ltENG1&gt& lhs, const matrix&ltENG2&gt& rhs)</h3> </code>
+        <li><p>compares if 2 vectors have equal element values.</p></li>
+        <code class='prettyprint'> <h3 id='matrix.hppinline auto operator!=(const matrix&ltENG1&gt& lhs, const matrix&ltENG2&gt& rhs)' class='declaration'>inline auto operator!=(const matrix&ltENG1&gt& lhs, const matrix&ltENG2&gt& rhs)</h3> </code>
+        <li><p>compares if 2 vectors do not have equal element values.</p></li>
+    </ul>
+    <h2 class='fileHeader'>matrix_engine_operator.hpp</h2>
+    <ul>
+        <code class='prettyprint'> <h3 id='matrix_engine_operator.hppauto matrix_engine_equal(FwdIt1 first1, FwdIt1 last1, FwdIt2 first2, FwdIt2 last2) noexcept' class='declaration'>auto matrix_engine_equal(FwdIt1 first1, FwdIt1 last1, FwdIt2 first2, FwdIt2 last2) noexcept</h3> </code>
+        <li><p>helper function for comparing vector_engines.</p></li>
+    </ul>
+    <h2 class='fileHeader'>quarternion.hpp</h2>
+    <ul>
+        <code class='prettyprint'> <h3 id='quarternion.hppconstexpr quarternion(const T x, const T y, const T z, const T w);' class='declaration'>constexpr quarternion(const T x, const T y, const T z, const T w);</h3> </code>
+        <li><p>constructs a quarternion from given x,y,z,w values.</p></li>
+        <code class='prettyprint'> <h3 id='quarternion.hppconstexpr explicit quarternion(const fvector4&ltT&gt& vec4);' class='declaration'>constexpr explicit quarternion(const fvector4&ltT&gt& vec4);</h3> </code>
+        <li><p>constructs a quarternion from a given fixed vector4.</p></li>
+        <code class='prettyprint'> <h3 id='quarternion.hppconstexpr quarternion(const std::initializer_list&lttype&gt data);' class='declaration'>constexpr quarternion(const std::initializer_list&lttype&gt data);</h3> </code>
+        <li><p>constructs a quarternion with an std::initializer_list data structure.</p></li>
+        <code class='prettyprint'> <h3 id='quarternion.hppconstexpr quarternion& operator=(const fvector4&ltT&gt& vec4);' class='declaration'>constexpr quarternion& operator=(const fvector4&ltT&gt& vec4);</h3> </code>
+        <li><p>copies a fixed vector4 into the quarternion.</p></li>
+        <code class='prettyprint'> <h3 id='quarternion.hppconstexpr quarternion& operator=(const std::initializer_list&lttype&gt data);' class='declaration'>constexpr quarternion& operator=(const std::initializer_list&lttype&gt data);</h3> </code>
+        <li><p>copies an std::initializer_list data structure into the quarternion.</p></li>
+        <code class='prettyprint'> <h3 id='quarternion.hppconstexpr reference operator[](const size_type index);' class='declaration'>constexpr reference operator[](const size_type index);</h3> </code>
+        <li><p>returns a reference to an element at the given index.</p></li>
+        <code class='prettyprint'> <h3 id='quarternion.hppconstexpr const_reference operator[](const size_type index) const;' class='declaration'>constexpr const_reference operator[](const size_type index) const;</h3> </code>
+        <li><p>returns a const reference to an element at the given index.</p></li>
+        <code class='prettyprint'> <h3 id='quarternion.hppconstexpr void set(const T rotation);' class='declaration'>constexpr void set(const T rotation);</h3> </code>
+        <li><p>sets the rotation of the quarnterion.</p></li>
+        <code class='prettyprint'> <h3 id='quarternion.hppconstexpr void set(const fvector4&ltT&gt& vec4);' class='declaration'>constexpr void set(const fvector4&ltT&gt& vec4);</h3> </code>
+        <li><p>sets the x,y,z,w values to a given vector4.</p></li>
+        <code class='prettyprint'> <h3 id='quarternion.hppconstexpr auto x() const;' class='declaration'>constexpr auto x() const;</h3> </code>
+        <li><p>returns the x value for this quarternion.</p></li>
+        <code class='prettyprint'> <h3 id='quarternion.hppconstexpr auto y() const;' class='declaration'>constexpr auto y() const;</h3> </code>
+        <li><p>returns the y value for this quarternion.</p></li>
+        <code class='prettyprint'> <h3 id='quarternion.hppconstexpr auto z() const;' class='declaration'>constexpr auto z() const;</h3> </code>
+        <li><p>returns the z value for this quarternion.</p></li>
+        <code class='prettyprint'> <h3 id='quarternion.hppconstexpr auto w() const;' class='declaration'>constexpr auto w() const;</h3> </code>
+        <li><p>returns the w (or rotation) value for this quarternion.</p></li>
+        <code class='prettyprint'> <h3 id='quarternion.hppconstexpr auto length() const;' class='declaration'>constexpr auto length() const;</h3> </code>
+        <li><p>computes and returns the length of the quarternion.</p></li>
+        <code class='prettyprint'> <h3 id='quarternion.hppconstexpr auto length_squared() const;' class='declaration'>constexpr auto length_squared() const;</h3> </code>
+        <li><p>computes and returns the length squared of the quarternion.</p></li>
+        <code class='prettyprint'> <h3 id='quarternion.hppconstexpr auto vector4() const;' class='declaration'>constexpr auto vector4() const;</h3> </code>
+        <li><p>returns a vector4 representation of the quarternion.</p></li>
+    </ul>
+    <h2 class='fileHeader'>vector.hpp</h2>
+    <ul>
+        <code class='prettyprint'> <h3 id='vector.hppconstexpr explicit vector(const storage_type data);' class='declaration'>constexpr explicit vector(const storage_type data);</h3> </code>
+        <li><p>constructs a vector with a storage_type data structure.</p></li>
+        <code class='prettyprint'> <h3 id='vector.hppconstexpr vector(const std::initializer_list&lttype&gt data);' class='declaration'>constexpr vector(const std::initializer_list&lttype&gt data);</h3> </code>
+        <li><p>constructs a vector with an std::initializer_list data structure.</p></li>
+        <code class='prettyprint'> <h3 id='vector.hppconstexpr explicit vector(const ENG& engine);' class='declaration'>constexpr explicit vector(const ENG& engine);</h3> </code>
+        <li><p>constructs a vector with an engine provided.</p></li>
+        <code class='prettyprint'> <h3 id='vector.hppconstexpr vector& operator=(const storage_type data);' class='declaration'>constexpr vector& operator=(const storage_type data);</h3> </code>
+        <li><p>copies a storage_type data structure into the vector.</p></li>
+        <code class='prettyprint'> <h3 id='vector.hppconstexpr vector& operator=(const std::initializer_list&lttype&gt data);' class='declaration'>constexpr vector& operator=(const std::initializer_list&lttype&gt data);</h3> </code>
+        <li><p>copies an std::initializer_list data structure into the vector.</p></li>
+        <code class='prettyprint'> <h3 id='vector.hppconstexpr vector& operator=(const ENG& engine);' class='declaration'>constexpr vector& operator=(const ENG& engine);</h3> </code>
+        <li><p>copies an underlying engine type into the vector.</p></li>
+        <code class='prettyprint'> <h3 id='vector.hppconstexpr reference operator[](const size_type index) noexcept;' class='declaration'>constexpr reference operator[](const size_type index) noexcept;</h3> </code>
+        <li><p>returns a reference to an element at the given index.</p></li>
+        <code class='prettyprint'> <h3 id='vector.hppconstexpr const_reference operator[](const size_type index) const noexcept;' class='declaration'>constexpr const_reference operator[](const size_type index) const noexcept;</h3> </code>
+        <li><p>returns a const reference to an element at the given index.</p></li>
+        <code class='prettyprint'> <h3 id='vector.hppconstexpr auto operator+=(const vector&ltENG&gt& rhs);' class='declaration'>constexpr auto operator+=(const vector&ltENG&gt& rhs);</h3> </code>
+        <li><p>adds a vector to this vector.</p></li>
+        <code class='prettyprint'> <h3 id='vector.hppconstexpr auto operator+=(const type scalar);' class='declaration'>constexpr auto operator+=(const type scalar);</h3> </code>
+        <li><p>adds a scalar to this vector.</p></li>
+        <code class='prettyprint'> <h3 id='vector.hppconstexpr auto operator-=(const vector&ltENG&gt& rhs);' class='declaration'>constexpr auto operator-=(const vector&ltENG&gt& rhs);</h3> </code>
+        <li><p>subtracts a vector from this vector.</p></li>
+        <code class='prettyprint'> <h3 id='vector.hppconstexpr auto operator-=(const type scalar);' class='declaration'>constexpr auto operator-=(const type scalar);</h3> </code>
+        <li><p>subtracts a scalar from this vector.</p></li>
+        <code class='prettyprint'> <h3 id='vector.hppconstexpr auto operator*=(const vector&ltENG&gt& rhs);' class='declaration'>constexpr auto operator*=(const vector&ltENG&gt& rhs);</h3> </code>
+        <li><p>multiplies a vector with this vector.</p></li>
+        <code class='prettyprint'> <h3 id='vector.hppconstexpr auto operator*=(const type scalar);' class='declaration'>constexpr auto operator*=(const type scalar);</h3> </code>
+        <li><p>multiplies a scalar with this vector.</p></li>
+        <code class='prettyprint'> <h3 id='vector.hppconstexpr auto begin() noexcept;' class='declaration'>constexpr auto begin() noexcept;</h3> </code>
+        <li><p>return the begin iterator.</p></li>
+        <code class='prettyprint'> <h3 id='vector.hppconstexpr auto begin() const noexcept;' class='declaration'>constexpr auto begin() const noexcept;</h3> </code>
+        <li><p>return the begin iterator without modifying elements.</p></li>
+        <code class='prettyprint'> <h3 id='vector.hppconstexpr auto end() noexcept;' class='declaration'>constexpr auto end() noexcept;</h3> </code>
+        <li><p>return the end iterator.</p></li>
+        <code class='prettyprint'> <h3 id='vector.hppconstexpr auto end() const noexcept;' class='declaration'>constexpr auto end() const noexcept;</h3> </code>
+        <li><p>return the end iterator without modifying elements.</p></li>
+        <code class='prettyprint'> <h3 id='vector.hppconstexpr auto rbegin() noexcept;' class='declaration'>constexpr auto rbegin() noexcept;</h3> </code>
+        <li><p>returns the reverse begin iterator.</p></li>
+        <code class='prettyprint'> <h3 id='vector.hppconstexpr auto rbegin() const noexcept;' class='declaration'>constexpr auto rbegin() const noexcept;</h3> </code>
+        <li><p>returns the reverse begin iterator without modifying elements.</p></li>
+        <code class='prettyprint'> <h3 id='vector.hppconstexpr auto rend() noexcept;' class='declaration'>constexpr auto rend() noexcept;</h3> </code>
+        <li><p>returns the reverse end iterator.</p></li>
+        <code class='prettyprint'> <h3 id='vector.hppconstexpr auto rend() const noexcept;' class='declaration'>constexpr auto rend() const noexcept;</h3> </code>
+        <li><p>returns the reverse end iterator without modifying elements.</p></li>
+        <code class='prettyprint'> <h3 id='vector.hppconstexpr auto cbegin() const noexcept;' class='declaration'>constexpr auto cbegin() const noexcept;</h3> </code>
+        <li><p>returns the const begin iterator.</p></li>
+        <code class='prettyprint'> <h3 id='vector.hppconstexpr auto cend() const noexcept;' class='declaration'>constexpr auto cend() const noexcept;</h3> </code>
+        <li><p>returns the const end iterator.</p></li>
+        <code class='prettyprint'> <h3 id='vector.hppconstexpr auto crbegin() const noexcept;' class='declaration'>constexpr auto crbegin() const noexcept;</h3> </code>
+        <li><p>returns the const reverse begin iterator.</p></li>
+        <code class='prettyprint'> <h3 id='vector.hppconstexpr auto crend() const noexcept;' class='declaration'>constexpr auto crend() const noexcept;</h3> </code>
+        <li><p>returns the const reverse end iterator.</p></li>
+        <code class='prettyprint'> <h3 id='vector.hppconstexpr auto engine() const noexcept;' class='declaration'>constexpr auto engine() const noexcept;</h3> </code>
+        <li><p>returns the underlying engine.</p></li>
+        <code class='prettyprint'> <h3 id='vector.hppconstexpr auto data() const noexcept;' class='declaration'>constexpr auto data() const noexcept;</h3> </code>
+        <li><p>returns the underlying data as an instance of the storage_type.</p></li>
+        <code class='prettyprint'> <h3 id='vector.hppconstexpr auto is_normalised() const noexcept;' class='declaration'>constexpr auto is_normalised() const noexcept;</h3> </code>
+        <li><p>returns whether this vector has been normalised or not.</p></li>
+        <code class='prettyprint'> <h3 id='vector.hppconstexpr auto dimensions() const noexcept;' class='declaration'>constexpr auto dimensions() const noexcept;</h3> </code>
+        <li><p>returns the number of dimensions present in the vector.</p></li>
+        <code class='prettyprint'> <h3 id='vector.hppconstexpr auto dimensions_capacity() const noexcept;' class='declaration'>constexpr auto dimensions_capacity() const noexcept;</h3> </code>
+        <li><p>returns the maximum number of dimensions present in the vector.</p></li>
+        <code class='prettyprint'> <h3 id='vector.hppconstexpr void normalise() noexcept;' class='declaration'>constexpr void normalise() noexcept;</h3> </code>
+        <li><p>normalises the vector.</p></li>
+        <code class='prettyprint'> <h3 id='vector.hppconstexpr auto length() const noexcept;' class='declaration'>constexpr auto length() const noexcept;</h3> </code>
+        <li><p>computes and returns the length of the vector.</p></li>
+        <code class='prettyprint'> <h3 id='vector.hppconstexpr auto length_squared() const noexcept;' class='declaration'>constexpr auto length_squared() const noexcept;</h3> </code>
+        <li><p>computes and returns the length squared of the vector.</p></li>
+        <code class='prettyprint'> <h3 id='vector.hppconstexpr auto normalised() const noexcept;' class='declaration'>constexpr auto normalised() const noexcept;</h3> </code>
+        <li><p>returns a normalised version of the vector.</p></li>
+        <code class='prettyprint'> <h3 id='vector.hppvoid resize(const size_type size);' class='declaration'>void resize(const size_type size);</h3> </code>
+        <li><p>resizes the vector to a new given size, only enabled if underyling engine is resizeable.</p></li>
+        <code class='prettyprint'> <h3 id='vector.hppvoid reserve(const size_type capacity);' class='declaration'>void reserve(const size_type capacity);</h3> </code>
+        <li><p>reserves extra space in the vector to the new given capacity, only enabled if underyling engine is resizeable.</p></li>
+        <code class='prettyprint'> <h3 id='vector.hppvoid resize_and_reserve(const size_type size, const size_type capacity);' class='declaration'>void resize_and_reserve(const size_type size, const size_type capacity);</h3> </code>
+        <li><p>resizes and reserves the given size and capacity, only enabled if underlying engine is resizeable.</p></li>
+        <code class='prettyprint'> <h3 id='vector.hppinline auto operator+(const vector&ltENG1&gt& lhs, const vector&ltENG2&gt& rhs)' class='declaration'>inline auto operator+(const vector&ltENG1&gt& lhs, const vector&ltENG2&gt& rhs)</h3> </code>
+        <li><p>adds together 2 vectors of varying engine types.</p></li>
+        <code class='prettyprint'> <h3 id='vector.hppinline auto operator-(const vector&ltENG1&gt& lhs, const vector&ltENG2&gt& rhs)' class='declaration'>inline auto operator-(const vector&ltENG1&gt& lhs, const vector&ltENG2&gt& rhs)</h3> </code>
+        <li><p>subtracts 2 vectors of varying engine types.</p></li>
+        <code class='prettyprint'> <h3 id='vector.hppinline auto operator*(const vector&ltENG1&gt& lhs, const vector&ltENG2&gt& rhs)' class='declaration'>inline auto operator*(const vector&ltENG1&gt& lhs, const vector&ltENG2&gt& rhs)</h3> </code>
+        <li><p>multiplies together 2 vectors of varying engine types.</p></li>
+        <code class='prettyprint'> <h3 id='vector.hppinline auto operator+(const vector&ltENG&gt& vec, S scalar)' class='declaration'>inline auto operator+(const vector&ltENG&gt& vec, S scalar)</h3> </code>
+        <li><p>adds a scalar to every element in a vector.</p></li>
+        <code class='prettyprint'> <h3 id='vector.hppinline auto operator-(const vector&ltENG&gt& vec, S scalar)' class='declaration'>inline auto operator-(const vector&ltENG&gt& vec, S scalar)</h3> </code>
+        <li><p>subtracts a scalar from every element in a vector.</p></li>
+        <code class='prettyprint'> <h3 id='vector.hppinline auto operator*(const vector&ltENG&gt& vec, S scalar)' class='declaration'>inline auto operator*(const vector&ltENG&gt& vec, S scalar)</h3> </code>
+        <li><p>multiplies a scalar with every element in a vector.</p></li>
+        <code class='prettyprint'> <h3 id='vector.hppinline auto operator==(const vector&ltENG1&gt& lhs, const vector&ltENG2&gt& rhs)' class='declaration'>inline auto operator==(const vector&ltENG1&gt& lhs, const vector&ltENG2&gt& rhs)</h3> </code>
+        <li><p>compares if 2 vectors have equal element values.</p></li>
+        <code class='prettyprint'> <h3 id='vector.hppinline auto operator!=(const vector&ltENG1&gt& lhs, const vector&ltENG2&gt& rhs)' class='declaration'>inline auto operator!=(const vector&ltENG1&gt& lhs, const vector&ltENG2&gt& rhs)</h3> </code>
+        <li><p>compares if 2 vectors do not have equal element values.</p></li>
+        <code class='prettyprint'> <h3 id='vector.hppinline auto operator&gt(const vector&ltENG1&gt& lhs, const vector&ltENG2&gt& rhs)' class='declaration'>inline auto operator&gt(const vector&ltENG1&gt& lhs, const vector&ltENG2&gt& rhs)</h3> </code>
+        <li><p>compares if the first vector is greater than the second vector.</p></li>
+        <code class='prettyprint'> <h3 id='vector.hppinline auto operator&lt(const vector&ltENG1&gt& lhs, const vector&ltENG2&gt& rhs)' class='declaration'>inline auto operator&lt(const vector&ltENG1&gt& lhs, const vector&ltENG2&gt& rhs)</h3> </code>
+        <li><p>compares if the first vector is less than the second vector.</p></li>
+        <code class='prettyprint'> <h3 id='vector.hppinline auto operator&gt=(const vector&ltENG1&gt& lhs, const vector&ltENG2&gt& rhs)' class='declaration'>inline auto operator&gt=(const vector&ltENG1&gt& lhs, const vector&ltENG2&gt& rhs)</h3> </code>
+        <li><p>compares if the first vector is greater than or equal to the second vector.</p></li>
+        <code class='prettyprint'> <h3 id='vector.hppinline auto operator&lt=(const vector&ltENG1&gt& lhs, const vector&ltENG2&gt& rhs)' class='declaration'>inline auto operator&lt=(const vector&ltENG1&gt& lhs, const vector&ltENG2&gt& rhs)</h3> </code>
+        <li><p>compares if the first vector is less than or equal to the second vector.</p></li>
+    </ul>
+    <h2 class='fileHeader'>vector_engine_operator.hpp</h2>
+    <ul>
+        <code class='prettyprint'> <h3 id='vector_engine_operator.hppauto vector_engine_less_than(FwdIt1 first1, FwdIt1 last1, FwdIt2 first2, FwdIt2 last2) noexcept' class='declaration'>auto vector_engine_less_than(FwdIt1 first1, FwdIt1 last1, FwdIt2 first2, FwdIt2 last2) noexcept</h3> </code>
+        <li><p>helper function for comparing vector_engines.</p></li>
+    </ul>
+</div>
+</body>
+</html>
