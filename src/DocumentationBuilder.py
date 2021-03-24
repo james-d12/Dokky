@@ -26,7 +26,7 @@ class DocumentationBuilder:
             file.write("<meta charset='utf-8'/>\n")
             file.write("<meta name='viewport' content='width=device-width, initial-scale=1'>\n")
             file.write("<script src='javascript/utility.js'></script>\n")
-            file.write("<link rel='stylesheet' href='sheets/dark.css' id='theme'>\n")
+            file.write("<link rel='stylesheet' href='sheets/light.css' id='theme'>\n")
             file.write("</head>\n")
             file.write("<body>\n")
             file.write("<h1> Reference </h1>\n")

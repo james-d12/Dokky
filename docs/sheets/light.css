@@ -1,3 +1,13 @@
+html {
+	background-color: 	white;
+	font-family:'Times New Roman', Times, serif;
+}
+
+body {
+	width: 75%;
+	height: 100%;
+}
+
 .sidebar {
     height: 100%;
     width: 450px;
@@ -7,6 +17,13 @@
     left: 0;
     background-color: #F8F8FF;
     overflow-x: hidden;
+    padding-top: 16px;
+}
+
+.main {
+    margin-left: 450px;
+    position: absolute;
+    padding: 0px 10px;
     padding-top: 16px;
 }
 
@@ -60,15 +77,6 @@
     display: block;
 }
 
-html {
-	background-color: 	white;
-	font-family:'Times New Roman', Times, serif;
-}
-
-body {
-	width: 1500px;
-	height: 100%;
-}
 
 .kwd{
 	color: rgb(122, 171, 255);
@@ -103,39 +111,4 @@ body {
 .main p {
 	color: black;
 	font-size: 18px;
-}
-
-.main {
-	margin-left: 450px;
-    padding: 0px 10px;
-}
-
-.navbar {
-    width: 100%;
-    background-color: #555;
-    overflow: auto;
-}
-  
-.navbar a {
-    float: left;
-    text-align: center;
-    padding: 12px;
-    color: white;
-    text-decoration: none;
-    font-size: 24px;
-}
-  
-.navbar a:hover {
-    background-color: #000;
-}
-
-.active {
-    background-color: #4CAF50;
-}
-  
-@media screen and (max-width: 500px) {
-    .navbar a {
-      float: none;
-      display: block;
-    }
 }

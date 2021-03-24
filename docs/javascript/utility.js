@@ -38,11 +38,14 @@ function toggleCheckboxes(){
 }
 
 function changeTheme(){
-    if (document.getElementById('theme').href.includes("sheets/dark.css")) {
-        console.log("Changing to light theme.")
-        document.getElementById('theme').href = "sheets/light.css";
+    const themeElement = document.getElementById('theme')
+    const themeChangeText = document.getElementById('changeThemeText')
+
+    if(themeElement.href.includes("dark_theme.css")){
+        themeElement.href = themeElement.href.replace("dark_theme.css", "light_theme.css")
+        themeChangeText.innerHTML = "Switch To Dark Theme"
     } else {
-        console.log("Changing to dark theme.")
-        document.getElementById('theme').href = "sheets/dark.css";
+        themeElement.href = themeElement.href.replace("light_theme.css", "dark_theme.css")
+        themeChangeText.innerHTML = "Switch To Light Theme"
     }
 }
