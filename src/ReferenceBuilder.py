@@ -1,3 +1,6 @@
+from jinja2 import Environment, FileSystemLoader
+env = Environment(loader=FileSystemLoader('src/templates'))
+
 class ReferenceBuilder:
     def __init__(self, files, dictionary):
         self.files = files
@@ -11,12 +14,12 @@ class ReferenceBuilder:
         file.write("<meta name='viewport' content='width=device-width, initial-scale=1'>\n")
         file.write("<script src='javascript/utility.js'></script>\n")
         file.write("<script src='https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js'></script>\n")
-        file.write("<link rel='stylesheet' href='sheets/dark.css' id='theme'>\n")
+        file.write("<link rel='stylesheet' href='sheets/light.css' id='theme'>\n")
         file.write("</head>\n")
         file.write("<body>\n")
         file.write("<div class='sidebar' id='sidebar-id'>\n")
         file.write("<a>Reference</a>\n")
-        file.write("<input onkeypress='search()' id='input-search' type='text' placeholder='search...'>\n")
+        file.write("<input onkeyup='search()' id='input-search' type='text' placeholder='search...'>\n")
 
         
     def writeSideBar(self,file):
@@ -36,9 +39,9 @@ class ReferenceBuilder:
 
     def writeReferences(self,file):
         file.write("<div class='main' id='main-id'>\n")
+        file.write("<button onclick='toggleSidebar();'>Toggle Sidebar</button>\n")
         file.write("<button onclick='toggleCheckboxes();'>Toggle Checkboxes</button>\n")
         file.write("<button onclick='changeTheme();' id='switch'>Switch Theme</button>\n")
-        file.write("<button onclick='toggleSidebar();'>Toggle Sidebar</button>\n")
         for fileName, data in self.dictionary.items():
             if len(data) > 0:
                 file.write("    <h2 class='fileHeader'>" + str(fileName) + "</h2>\n")
