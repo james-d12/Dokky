@@ -22,3 +22,17 @@ The only 3rd party python library required is Jinja2. It is a python template li
 # Example Reference Page ( Empty Directory Given )
 
 ![alt text](https://github.com/james-d12/documentation-generator/blob/master/images/image-01.png?raw=true) 
+
+
+# Checklist
+
+## Browsers
+- [x] Works on Chrome based.
+- [x] Works on Firefox
+- [ ] Works on Internet Explorer
+
+## Resolutions
+- [x] Works on 1080p Display.
+- [ ] Works on Mobile Display
+- [ ] Works on 2k Display.
+- [ ] Works on 4k Display
