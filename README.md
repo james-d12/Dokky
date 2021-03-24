@@ -1,7 +1,7 @@
 # Overview
 
-This is currently being made to assist me in developing Atom. It automatically parses files and looks for comments in a given style (# //, etc) and then gets the function 
-declaration beneath it and creates a simple html page of each comment within each file.
+This is currently being made to assist me in developing Atomic. It automatically parses files and looks for comments in a given style (# //, etc) and then gets the function 
+declaration beneath it and creates a home page and a reference page for all the files.
 
 # Requirements
 
