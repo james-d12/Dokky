@@ -19,4 +19,6 @@ The only 3rd party python library required is Jinja2. It is a python template li
 
 # Examples
 
+# Example Reference Page ( Empty Directory Given )
+
 ![alt text](https://github.com/james-d12/documentation-generator/blob/master/images/image-01.png?raw=true) 
