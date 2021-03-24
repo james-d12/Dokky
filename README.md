@@ -1,7 +1,7 @@
 # Overview
 
-This is currently being made to assist me in developing Atom. It automatically parses files and looks for comments in a given style (# //, etc) and then gets the function 
-declaration beneath it and creates a simple html page of each comment within each file.
+This is currently being made to assist me in developing Atomic. It automatically parses files and looks for comments in a given style (# //, etc) and then gets the function 
+declaration beneath it and creates a home page and a reference page for all the files.
 
 # Requirements
 
@@ -19,4 +19,23 @@ The only 3rd party python library required is Jinja2. It is a python template li
 
 # Examples
 
+## Example Reference Page (Empty Directory Given)
+
 ![alt text](https://github.com/james-d12/documentation-generator/blob/master/images/image-01.png?raw=true) 
+
+## Example Reference Page (Atomic Directory Given - Triangle.hpp file) 
+
+![alt text](https://github.com/james-d12/documentation-generator/blob/master/images/image-02.png?raw=true) 
+
+# Checklist
+
+## Browsers
+- [x] Works on Chrome based.
+- [x] Works on Firefox
+- [ ] Works on Internet Explorer
+
+## Resolutions
+- [x] Works on 1080p Display.
+- [ ] Works on Mobile Display
+- [ ] Works on 2k Display.
+- [ ] Works on 4k Display
