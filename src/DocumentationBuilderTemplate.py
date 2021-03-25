@@ -5,10 +5,11 @@ from src.Utility import getFilesFromDirectory, addFilesToDictionary, readFiles
 from src.ReferenceBuilderTemplate import ReferenceBuilderTemplate
 
 class DocumentationBuilderTemplate:
-    def __init__(self, directory, commentDenotion, filterList):
+    def __init__(self, directory, commentDenotion, filterList, outputDirectory):
         self.directory = directory
         self.commentDenotion = commentDenotion
         self.filterList = filterList
+        self.outputDirectory = outputDirectory
 
     def createReferences(self):
         allFiles = getFilesFromDirectory(self.directory, self.filterList)
@@ -23,11 +24,11 @@ class DocumentationBuilderTemplate:
 
             addFilesToDictionary(files, dictionary)
             readFiles(files, self.commentDenotion, dictionary)
-            ReferenceBuilderTemplate(files, dictionary).createReferences(allFiles[i].name, fileNames)
+            ReferenceBuilderTemplate(files, dictionary, self.outputDirectory).createReferences(allFiles[i].name, fileNames)
 
     def createIndex(self):
         template = env.get_template('index.html')
-        with open("docs/index.html", 'w+') as file:
+        with open("{outputDirectory}/index.html".format(outputDirectory=self.outputDirectory), 'w+') as file:
             template_data = template.render()
             file.write(template_data)
 

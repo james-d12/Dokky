@@ -1,22 +1,20 @@
-from src.DocumentationBuilder import DocumentationBuilder
+from src.ConfigReader import ConfigReader
 from src.DocumentationBuilderTemplate import DocumentationBuilderTemplate
 from sys import argv
 
 if __name__ == "__main__":
 
-    if(str(argv[4]) == "old"):
-        print("Running old code...")
-        directory=str(argv[1])
-        commentDenotion=str(argv[2])
-        filterList=str(argv[3]).replace(" ", "").split(",")
+    if(str(argv[1]) == "--gen"):
+        # create default json.
+        print("Generating default configuration...")
+    else: 
+        cr = ConfigReader(str(argv[1]))
+        cr.readConfiguration()
 
-        writer = DocumentationBuilder(directory,commentDenotion,filterList)
-        writer.createDocumentation()
-    else:        
-        print("Running new code...")
-        directory=str(argv[1])
-        commentDenotion=str(argv[2])
-        filterList=str(argv[3]).replace(" ", "").split(",")
+        includeDirectory=cr.getConfig()['includeDirectory']
+        outputDirectory = cr.getConfig()['outputDirectory']
+        commentDenotion=cr.getConfig()['commentDenotion']
+        filterList=cr.getConfig()['filterList']
 
-        writer = DocumentationBuilderTemplate(directory,commentDenotion,filterList)
+        writer = DocumentationBuilderTemplate(includeDirectory,commentDenotion,filterList, outputDirectory)
         writer.createDocumentation()
