@@ -3,10 +3,9 @@ from src.DocumentationBuilderTemplate import DocumentationBuilderTemplate
 from sys import argv
 
 if __name__ == "__main__":
-
     if(str(argv[1]) == "--gen"):
         # create default json.
-        print("Generating default configuration...")
+        print("Generating default configuration...")    
     else: 
         cr = ConfigReader(str(argv[1]))
         cr.readConfiguration()

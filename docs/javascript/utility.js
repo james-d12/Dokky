@@ -29,14 +29,6 @@ function toggleSidebar(){
     }
 }
 
-function toggleCheckboxes(){
-    const length = checkboxes.length;
-    for(let index = 0; index < length; ++index){
-        const item = checkboxes[index];
-        item.checked = !item.checked;
-    }
-}
-
 function changeTheme(){
     const themeElement = document.getElementById('theme')
     const themeChangeText = document.getElementById('changeThemeText')
