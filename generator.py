@@ -17,3 +17,4 @@ if __name__ == "__main__":
 
         writer = DocumentationBuilderTemplate(includeDirectory,commentDenotion,filterList, outputDirectory)
         writer.createDocumentation()
+	print("asdasd")
