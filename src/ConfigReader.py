@@ -7,13 +7,10 @@ class ConfigReader:
         self.filePath = filePath 
         self.config = {}
 
-
     def readConfiguration(self):
         with open(self.filePath, 'r') as file:
-
             try:
                 data = json.load(file)['config']
-                
                 if(os.path.exists(data['includeDirectory']) == False):
                     print("Directory does not exist!")
                     exit(1)

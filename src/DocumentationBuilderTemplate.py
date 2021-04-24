@@ -13,7 +13,7 @@ class DocumentationBuilderTemplate:
 
     def createReferences(self):
         allFiles = getFilesFromDirectory(self.directory, self.filterList)
-    
+
         fileNames = []
         for f in allFiles:
             fileNames.append(f.name)

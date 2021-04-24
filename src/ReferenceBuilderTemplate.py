@@ -1,6 +1,6 @@
 import os
 from jinja2 import Environment, FileSystemLoader
-env = Environment(loader=FileSystemLoader('src/templates'))
+env = Environment(loader=FileSystemLoader('src/Templates'))
 
 class ReferenceBuilderTemplate:
     def __init__(self, files, dictionary, outputDirectory):
@@ -29,8 +29,10 @@ class ReferenceBuilderTemplate:
     def createReferences(self, fileName, fileNames):
         self.createIndex(fileNames)
 
+        fileNames = sorted(fileNames)
+
         print("Creating {fileName}.html file....".format(fileName=fileName))
-        template = env.get_template('reference.html')
+        template = env.get_template('updated.html')
         with open("{outputDirectory}/{fileName}.html".format(fileName=fileName, outputDirectory=self.outputDirectory), 'w+') as file:
             template_data = template.render(names=fileNames, name=fileName, items=self.dictionary.items())
             file.write(template_data)
