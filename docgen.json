@@ -4,6 +4,6 @@
         "outputDirectory": "./docs",
         "commentDenotion": "//",
         "filterList": [ ".hpp", ".cpp", ".h" ],
-        "language": "python"
+        "language": "cpp"
     }
 }

@@ -18,9 +18,9 @@ def main(generateDefault=False):
         filterList=cr.getConfig()['filterList']
         language=cr.getConfig()['language']
 
-        writer = DocumentationBuilderTemplate(includeDirectory,commentDenotion,filterList, outputDirectory)
+        writer = DocumentationBuilderTemplate(language, includeDirectory,commentDenotion,filterList, outputDirectory)
         writer.createDocumentation()
-
+ 
 if __name__ == "__main__":
     generateDefault = False
     if(str(argv[1]) == "--gen"):
