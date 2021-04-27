@@ -1,9 +1,9 @@
 {
     "config": {
-        "includeDirectory": "C:/Dev/C++/Atom/Atom",
+        "includeDirectory": "",
         "outputDirectory": "./docs",
         "commentDenotion": "//",
-        "filterList": [ ".hpp", ".cpp", ".h" ],
-        "language": "cpp"
+        "filterList": [],
+        "language": ""
     }
 }
