@@ -2,67 +2,49 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="A Document">
+    <meta http-equiv="Cache-control" content="public">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Documentation </title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-    <link rel="stylesheet" href="sheets/style.css">
-    <link rel="stylesheet" href="sheets/light_theme.css" id="theme" >
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
-    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
-    <script src="javascript/utility.js"></script>
-    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <link href="./public/css/style.css" rel="stylesheet">
+    <link href="./public/css/effects.css" rel="stylesheet">
+    <title>Dokky</title> 
 </head>
 
 <body>
-    <div class="container-md">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                  <a class="nav-link" href="index.html">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="references/index.html">Reference</a>
-                </li>
-            </ul>
-            <div class="container-fluid">
-                <button onclick="changeTheme();"" type="button" id="switch" class="btn btn-secondary">
-                    <i class="fas fa-align-left"></i>
-                    <span id="changeThemeText">Switch To Dark Theme</span>
-                </button>
-                <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="fas fa-align-justify"></i>
-                </button>
-        </nav>
-        <h1 class="text-center"> Home </h1>
+    <div id="sidebar" class="sidebar">
+        <div class="sidebar-entry">
+        </div>
     </div>
 
+    <div id="navbar" class="navbar">
+        <button onclick="toggleSidebar();" aria-label="Toggles the Sidebar" title="Toggle Sidebar"><i class="fas fa-bars"></i></button> 
+        <a href="./index.html" aria-label="Goes to homepage." title="Go to homepage"><button><i class="fas fa-home"></i></button></a>
+        <a href="./references/index.html" aria-label="Goes to reference homepage." title="Go to reference homepage"><button><i class="fas fa-book"></i></button></a>
+        <a href="./sources/index.html" aria-label="Goes to source code homepage." title="Go to source code homepage"><button><i class="fas fa-code"></i></button></a>
+      
+        <div class="dropdown"><button aria-label="Shows a List of Themes" title="Show themes"><i class="fas fa-palette"></i></button> 
+            <div class="dropdown-content">
+                <button onclick="setTheme('theme-dark');" aria-label="Sets the Theme to Dark" title="Toggle Dark Theme">Dark</button> 
+                <button onclick="setTheme('theme-light');" aria-label="Sets the Theme to Light" title="Toggle Light Theme">Light</button> 
+                <button onclick="setTheme('theme-dracula');" aria-label="Sets the Theme to Dracula" title="Toggle Dracula Theme">Dracula</button> 
+            </div>
+        </div>
 
-     <!-- jQuery CDN - Slim version (=without AJAX) -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <!-- Popper.JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
-    <!-- Bootstrap JS -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
-    <!-- jQuery Custom Scroller CDN -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+        <div class="search">
+            <input onkeyup="search();" id="input-search" class="input-search" type="search">
+            <button onclick="toggleItem('input-search');" aria-label="Search using input text" title="Search Input"><i class="fas fa-search"></i></button>
+        </div>
 
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $("#sidebar").mCustomScrollbar({
-                theme: "minimal"
-            });
+        <a href="https://github.com/james-d12/Dokky" aria-label="Goes to source code homepage." title="Go to source code homepage"><button><i class="fab fa-github"></i></button></a>
+    </div>
 
-            $('#sidebarCollapse').on('click', function () {
-                $('#sidebar, #content').toggleClass('active');
-                $('.collapse.in').toggleClass('in');
-                $('a[aria-expanded=true]').attr('aria-expanded', 'false');
-            });
-        });
-
-    </script>
+    <div id="container" class="container">
+        <div class="paragraph">
+            <h1 class="paragraph-header"> Home </h1>
+        </div>
+    </div>
 </body>
 
+<script src="./public/js/utility.js"></script>
 </html>

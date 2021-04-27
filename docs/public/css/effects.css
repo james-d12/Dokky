@@ -1,0 +1,45 @@
+@import url("variables.css");
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-scrollbar-tr-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-scrollbar-th-bg);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-scrollbar-hover-bg);
+}
+
+.sidebar.fadeIn {
+    -webkit-animation: fadeIn 3s linear forwards;
+    animation: fadeIn 3s linear forwards;
+}
+.sidebar.fadeOut {
+    -webkit-animation: fadeOut 3s linear forwards;
+    animation: fadeOut 3s linear forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@-webkit-keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    to   { opacity: 0; }
+    from { opacity: 1; }
+}
+
+@-webkit-keyframes fadeOut {
+    to   { opacity: 0; }
+    from { opacity: 1; }
+}

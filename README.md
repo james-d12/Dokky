@@ -12,20 +12,31 @@ The only 3rd party python library required is Jinja2. It is a python template li
 # Usage
 
 1. You must comment any functions that you wish to add to the documentation - for languages that use '//' simply put '// {message here}'.
-2. Once you've added comments open up a terminal to where 'generator.py' is located and run the following command.
-3. generator.py {source_file_directory} {comment_type} {filer_list}
-4. So for example if i had source files in test/src, and it was written in C++ and wanted to parse any .cpp and .h files, I would do 'generator.py test/src "//" ".cpp, .h"'
+2. Once you've added comments open up a terminal to where 'Generator.py' is located and run the following command.
+3. ```python Generator.py docgen.json``` This passes in the default 'docgen.json' configuration file.
 
+# Configuration
+Dokky can be configured in the 'docgen.json' file located in the same path as the 'Generator.py' file. It has the following configuration areas: 
 
-# Examples
+- **includeDirectory**: The directory of the source files.
+- **outputDirectory**: The directory of the output documentation.
+- **commentDenotion**: The denotion for how comments are processed (e.g. what denotes a comment for Dokky to parse)
+- **filterList**: A filter list of files with these extensions to parse.
+- **language**: The language of the source files.
 
-## Example Reference Page (Empty Directory Given)
+The default JSON configuration is as follows:
 
-![alt text](https://github.com/james-d12/documentation-generator/blob/master/images/image-01.png?raw=true) 
-
-## Example Reference Page (Atomic Directory Given - Triangle.hpp file) 
-
-![alt text](https://github.com/james-d12/documentation-generator/blob/master/images/image-02.png?raw=true) 
+```json
+{
+    "config": {
+        "includeDirectory": "",
+        "outputDirectory": "./docs",
+        "commentDenotion": "//",
+        "filterList": [],
+        "language": ""
+    }
+}
+```
 
 # Checklist
 
@@ -39,3 +50,13 @@ The only 3rd party python library required is Jinja2. It is a python template li
 - [ ] Works on Mobile Display
 - [ ] Works on 2k Display.
 - [ ] Works on 4k Display
+
+# Examples
+
+## Example Reference Page (Empty Directory Given)
+
+![alt text](https://github.com/james-d12/documentation-generator/blob/master/images/image-01.png?raw=true) 
+
+## Example Reference Page (Atomic Directory Given - Triangle.hpp file) 
+
+![alt text](https://github.com/james-d12/documentation-generator/blob/master/images/image-02.png?raw=true) 

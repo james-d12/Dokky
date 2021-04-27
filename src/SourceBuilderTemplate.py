@@ -2,14 +2,13 @@ import os
 from jinja2 import Environment, FileSystemLoader
 env = Environment(loader=FileSystemLoader('src/Templates'))
 
-class ReferenceBuilderTemplate:
-    def __init__(self, dictionary, outputDirectory):
-        self.dictionary = dictionary
-        self.outputDirectory = "{outputDirectory}/references".format(outputDirectory=outputDirectory)
-        self.__createReferenceDirectory()
+class SourceBuilderTemplate:
+    def __init__(self, language, outputDirectory):
+        self.language = language
+        self.outputDirectory = "{outputDirectory}/sources".format(outputDirectory=outputDirectory)
+        self.__createSourceDirectory()
 
-
-    def __createReferenceDirectory(self):
+    def __createSourceDirectory(self):
         if(os.path.exists(self.outputDirectory) == False):
             try:
                 os.mkdir(self.outputDirectory)
@@ -19,17 +18,17 @@ class ReferenceBuilderTemplate:
                 print ("Successfully created the directory %s " % self.outputDirectory)
 
     def createIndex(self, fileNames):
-        template = env.get_template('reference_index.html')
+        template = env.get_template('source_index.html')
         with open("{outputDirectory}/index.html".format(outputDirectory=self.outputDirectory), 'w+') as file:
             template_data = template.render(names=fileNames)
             file.write(template_data)
 
-    def createReferences(self, fileName, fileNames):
+    def createSources(self, html, fileName, fileNames):
         fileNames = sorted(fileNames)
         self.createIndex(fileNames)
 
         print("Creating {outputDirectory}/{fileName}.html file....".format(outputDirectory=self.outputDirectory, fileName=fileName))
-        template = env.get_template('reference.html')
+        template = env.get_template('source.html')
         with open("{outputDirectory}/{fileName}.html".format(fileName=fileName, outputDirectory=self.outputDirectory), 'w+') as file:
-            template_data = template.render(names=fileNames, name=fileName, items=self.dictionary.items())
+            template_data = template.render(names=fileNames, name=fileName, html=html, language=self.language)
             file.write(template_data)

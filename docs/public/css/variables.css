@@ -1,0 +1,43 @@
+.theme-dark {
+    --color-font: #e8e6e3;
+
+    --color-bg: #14191f;
+    --color-card-bg: #253242;
+    --color-sidebar-bg: #1c2229;
+    --color-sidebar-entry-hover: #696363;
+    --color-navbar-bg: #14191f;
+    --color-navbar-border: #e8e6e3;
+    --color-container-bg: #1e2630;
+
+    --color-scrollbar-tr-bg: #2a3644;
+    --color-scrollbar-th-bg: #888;
+    --color-scrollbar-hover-bg: #555;
+}
+
+.theme-light {
+    --color-font: #14191f;
+    
+    --color-bg: white;
+    --color-sidebar-bg: #fdf9f4;
+    --color-sidebar-entry-hover: #948f8f;
+    --color-navbar-bg: white;
+    --color-navbar-border: black;
+    --color-container-bg: rgb(248, 244, 244);
+
+    --color-scrollbar-tr-bg: #f3f0ec;
+    --color-scrollbar-th-bg: #cfcdcb;
+    --color-scrollbar-hover-bg: #bbb5ae;
+}
+
+.theme-dracula {
+    --color-font: #f8f8f2;
+
+    --color-bg: #282a36;
+    --color-sidebar-bg: #44475a;
+    --color-navbar-bg: #282a36;
+    --color-navbar-border: #f8f8f2;
+
+    --color-scrollbar-tr-bg: #44475a;
+    --color-scrollbar-th-bg: #f8f8f2;
+    --color-scrollbar-hover-bg: #555;
+}

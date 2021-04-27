@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
     <link href="../public/css/style.css" rel="stylesheet">
     <link href="../public/css/effects.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism-coy.min.css" integrity="sha512-CKzEMG9cS0+lcH4wtn/UnxnmxkaTFrviChikDEk1MAWICCSN59sDWIF0Q5oDgdG9lxVrvbENSV1FtjLiBnMx7Q==" crossorigin="anonymous" />
     <title>Dokky</title> 
 </head>
 
@@ -42,8 +43,9 @@
     <div id="navbar" class="navbar">
         <button onclick="toggleSidebar();" aria-label="Toggles the Sidebar" title="Toggle Sidebar"><i class="fas fa-bars"></i></button> 
         <a href="../index.html" aria-label="Goes to homepage." title="Go to homepage"><button><i class="fas fa-home"></i></button></a>
-        <a href="./index.html" aria-label="Goes to reference homepage." title="Go to reference homepage"><button><i class="fas fa-book"></i></button></a>
-        <a href="../sources/index.html" aria-label="Goes to source code homepage." title="Go to source code homepage"><button><i class="fas fa-code"></i></button></a>
+        <a href="../references/index.html" aria-label="Goes to reference homepage." title="Go to reference homepage"><button><i class="fas fa-book"></i></button></a>
+        <a href="./index.html" aria-label="Goes to source code homepage." title="Go to source code homepage"><button><i class="fas fa-code"></i></button></a>
+      
         <div class="dropdown"><button aria-label="Shows a List of Themes" title="Show themes"><i class="fas fa-palette"></i></button> 
             <div class="dropdown-content">
                 <button onclick="setTheme('theme-dark');" aria-label="Sets the Theme to Dark" title="Toggle Dark Theme">Dark</button> 
@@ -59,10 +61,16 @@
     </div>
 
     <div id="container" class="container">
-        <div class="paragraph">
-            <h1 class="paragraph-header"> Reference </h1>
+        <div class="paragraph-code">
+            <h1 class="paragraph-header">{{ name }} </h1>
+            <pre>
+                <code>      
+                    {{ html }}
+                </code>
+            </pre>
         </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js" integrity="sha512-YBk7HhgDZvBxmtOfUdvX0z8IH2d10Hp3aEygaMNhtF8fSOvBZ16D/1bXZTJV6ndk/L/DlXxYStP8jrF77v2MIg==" crossorigin="anonymous"></script>
 </body>
 
 <script src="../public/js/utility.js"></script>
