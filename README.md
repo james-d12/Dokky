@@ -53,10 +53,10 @@ The default JSON configuration is as follows:
 
 # Examples
 
-## Example Reference Page (Empty Directory Given)
+## Example Home Page
 
 ![alt text](https://github.com/james-d12/documentation-generator/blob/master/images/image-01.png?raw=true) 
 
-## Example Reference Page (Atomic Directory Given - Triangle.hpp file) 
+## Example Source Code Browser (Fixed_Matrix_Engine.hpp from Atomic)
 
 ![alt text](https://github.com/james-d12/documentation-generator/blob/master/images/image-02.png?raw=true) 
