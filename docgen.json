@@ -1,9 +1,10 @@
 {
     "config": {
-        "includeDirectory": "",
+        "includeDirectory": "C:/Dev/C++/Atomic/include",
         "outputDirectory": "./docs",
         "commentDenotion": "//",
-        "filterList": [],
-        "language": ""
+        "filterList": [".hpp" ],
+        "language": "cpp",
+        "repository": "https://github.com/james-d12/Atomic"
     }
 }

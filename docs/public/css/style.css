@@ -20,20 +20,25 @@ body {
     text-align: center;
 }
 
-.container .paragraph-code * {
+.container .paragraph-header {
     color: var(--color-font);
-}
-
-.container .paragraph-code pre code {
-    overflow: auto;
-}
-
-.container .paragraph-code h1, h2 {
     font-size: xx-large;
     text-align: center;
-}    
+}
 
 .container .paragraph-code pre code {
+    width: 1000px;
+    height: 800px;
+    overflow: scroll;
+}
+
+.container .paragraph-code pre {
+    background-color: var(--color-bg);
+    margin: 0;
+    padding: 0;
+}
+
+.container .paragraph-code code {
     background-color: #eee;
     border: 1px solid #999;
     display: block;
