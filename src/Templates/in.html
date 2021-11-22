@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="A Document">
+    <meta http-equiv="Cache-control" content="public">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <link href="./public/css/style.css" rel="stylesheet">
+    <link href="./public/css/effects.css" rel="stylesheet">
+    <title>Dokky</title> 
+</head>
+
+<body>
+    <div id="sidebar" class="sidebar">
+        <div class="sidebar-entry">
+        </div>
+    </div>
+
+    
+    {% with repository=repository %}
+        {% include 'Components/Navbar.html' %}
+    {% endwith %}
+
+    <div id="container" class="container">
+        <div class="paragraph">
+            <h1 class="paragraph-header"> Home </h1>
+        </div>
+    </div>
+</body>
+
+<script src="./public/js/utility.js"></script>
+</html>

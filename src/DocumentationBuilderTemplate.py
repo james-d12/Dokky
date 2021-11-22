@@ -1,17 +1,16 @@
-from jinja2 import Environment, FileSystemLoader
-env = Environment(loader=FileSystemLoader('src/templates'))
-
+from src.Constant import JINJA2_ENV as env
 from src.Utility import getFilesFromDirectory, addFilesToDictionary, readFiles, formatLine
 from src.ReferenceBuilderTemplate import ReferenceBuilderTemplate
 from src.SourceBuilderTemplate import SourceBuilderTemplate
 
 class DocumentationBuilderTemplate:
-    def __init__(self, language, directory, commentDenotion, filterList, outputDirectory):
+    def __init__(self, language, directory, commentDenotion, filterList, outputDirectory, repository):
         self.language = language
         self.directory = directory
         self.commentDenotion = commentDenotion
         self.filterList = filterList
         self.outputDirectory = outputDirectory
+        self.repository = repository
 
     def createReferences(self):
         allFiles = getFilesFromDirectory(self.directory, self.filterList)
@@ -46,7 +45,7 @@ class DocumentationBuilderTemplate:
     def createIndex(self):
         template = env.get_template('index.html')
         with open("{outputDirectory}/index.html".format(outputDirectory=self.outputDirectory), 'w+') as file:
-            template_data = template.render()
+            template_data = template.render(repository=self.repository)
             file.write(template_data)
 
     def createDocumentation(self):

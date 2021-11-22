@@ -17,8 +17,9 @@ def main(generateDefault=False):
         commentDenotion=cr.getConfig()['commentDenotion']
         filterList=cr.getConfig()['filterList']
         language=cr.getConfig()['language']
+        repository=cr.getConfig()['repository']
 
-        writer = DocumentationBuilderTemplate(language, includeDirectory,commentDenotion,filterList, outputDirectory)
+        writer = DocumentationBuilderTemplate(language, includeDirectory,commentDenotion,filterList, outputDirectory, repository)
         writer.createDocumentation()
  
 if __name__ == "__main__":

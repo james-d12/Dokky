@@ -1,6 +1,5 @@
 import os
-from jinja2 import Environment, FileSystemLoader
-env = Environment(loader=FileSystemLoader('src/Templates'))
+from src.Constant import JINJA2_ENV as env
 
 class SourceBuilderTemplate:
     def __init__(self, language, outputDirectory):
