@@ -1,42 +1,48 @@
 # Overview
 
-This is currently being made to assist me in developing Atomic. It automatically parses files and looks for comments in a given style (# //, etc) and then gets the function 
-declaration beneath it and creates a home page and a reference page for all the files.
+Dokky creates a website and code documentation by reading a project's source code for comments. Aims to also be a markdown converter as well.
 
+Creates a reference and home page for all source files in the code.
 # Requirements
-
-The only 3rd party python library required is Jinja2. It is a python template library used for creating html files.
-
-- Jinja2: https://jinja.palletsprojects.com/en/2.11.x/
+The only 3rd party python library required is Jinja2. 
+- **Jinja2**: https://jinja.palletsprojects.com/en/2.11.x/
+    - ```pip install -U jinja2```
 
 # Usage
 
-1. You must comment any functions that you wish to add to the documentation - for languages that use '//' simply put '// {message here}'.
-2. Once you've added comments open up a terminal to where 'Generator.py' is located and run the following command.
-3. ```python Generator.py docgen.json``` This passes in the default 'docgen.json' configuration file.
+1. You must comment any functions that you wish to add to be parsed into documentation. Comment denotion can be customised further in the configuration file.
+2. Create a configuration file (can be called anything), that follows the following structure:
 
-# Configuration
-Dokky can be configured in the 'docgen.json' file located in the same path as the 'Generator.py' file. It has the following configuration areas: 
-
-- **includeDirectory**: The directory of the source files.
-- **outputDirectory**: The directory of the output documentation.
-- **commentDenotion**: The denotion for how comments are processed (e.g. what denotes a comment for Dokky to parse)
-- **filterList**: A filter list of files with these extensions to parse.
-- **language**: The language of the source files.
-
-The default JSON configuration is as follows:
-
+**Configuration File Structure**
 ```json
 {
     "config": {
-        "includeDirectory": "",
-        "outputDirectory": "./docs",
-        "commentDenotion": "//",
-        "filterList": [],
-        "language": ""
+        "includeDirectory": ,// The directory of the source code to parse.
+        "outputDirectory": ,// The output directory of the documentation.
+        "commentDenotion": ,// Specify what is considered a comment.
+        "filterList": ,// Specify what file extensions are to be scanned.
+        "language": ,// Specify the language of the source code.
+        "repository": ,// Specify the GitHub repository of the source code.
     }
 }
 ```
+
+**Example Configuration File Based On Atomic (My Project)**
+```json
+{
+    "config": {
+        "includeDirectory": "C:/Dev/C++/Atomic/include",
+        "outputDirectory": "./docs",
+        "commentDenotion": "//",
+        "filterList": [".hpp" ],
+        "language": "cpp",
+        "repository": "https://github.com/james-d12/Atomic"
+    }
+}
+```
+
+3. Once you've added comments open up a terminal to where 'Dokky.py' is located and run the following command.  
+```python ./Dokky.py {config_file_path} ```
 
 # Checklist
 
