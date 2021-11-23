@@ -52,6 +52,24 @@ def processFile(file, f, commentDenotion, dictionary):
 
 def readFiles(files, commentDenotion, dictionary):
     for f in files:
-        print("Reading file:", f.name, "....")
         with open(f.path, 'r') as file:
             processFile(f,file,commentDenotion,dictionary)
+    
+def getAllSortedFileNames(includeDirectory, filterList):
+    allFiles = getFilesFromDirectory(includeDirectory, filterList)
+
+    fileNames = []
+    for f in allFiles:
+        fileNames.append(f.name)
+    return fileNames
+
+def copyAssets(dest):
+    src = (os.path.dirname(os.path.realpath(__file__))) + "\Assets\public"
+    shutil.copytree(src, dest, dirs_exist_ok=True) 
+
+def createDirectoryIfNotExists(dir):
+        try:
+            if not os.path.exists(dir):
+                os.mkdir(dir)
+        except Exception as error:
+            print((f"Error occured making directory: {dir} with error: {error}"))

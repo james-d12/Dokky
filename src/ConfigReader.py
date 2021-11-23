@@ -1,24 +1,20 @@
 import os
 import json
-
 import src.Constant as Constant
 
-class ConfigReader:
+from src.Utility import createDirectoryIfNotExists
 
+class ConfigReader:
     def __init__(self, filePath):
         self.filePath = filePath 
         self.config = {}
 
-    def __createDirectoryIfNotExists(self, dir):
-        try:
-            if not os.path.exists(dir):
-                os.mkdir(dir)
-        except Exception as error:
-            print(("Error occured making directory: {dir} with error: {error}".format(dir=dir, error=error)))
-
     def validateConfiguration(self):
-        self.__createDirectoryIfNotExists(self.config[Constant.INCLUDE_DIRECTORY_KEY])
-        self.__createDirectoryIfNotExists(self.config[Constant.OUTPUT_DIRECTORY_KEY])
+        createDirectoryIfNotExists(self.config[Constant.INCLUDE_DIRECTORY_KEY])
+        createDirectoryIfNotExists(self.config[Constant.OUTPUT_DIRECTORY_KEY])
+        createDirectoryIfNotExists(self.config[Constant.OUTPUT_DIRECTORY_KEY] + "/public")
+        createDirectoryIfNotExists(self.config[Constant.OUTPUT_DIRECTORY_KEY] + "/sources")
+        createDirectoryIfNotExists(self.config[Constant.OUTPUT_DIRECTORY_KEY] + "/references")
 
     def readConfiguration(self):
         with open(self.filePath, 'r') as file:
@@ -36,9 +32,3 @@ class ConfigReader:
             except Exception as error:
                 print("An error occurred reading the configuration file with error: {error}".format(error=error))
                 exit(1)
-
-    def printConfiguration(self):
-        print(self.config)
-
-    def getConfig(self):
-        return self.config 

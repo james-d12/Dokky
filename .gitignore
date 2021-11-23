@@ -1,5 +1,4 @@
 __pycache__
-docs/references
-docs/*.html
-docs/sources
-docs/index.html
+[Dd]ocs/
+[Oo]ut/
+*.json
